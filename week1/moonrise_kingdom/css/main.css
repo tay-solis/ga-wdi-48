@@ -1,0 +1,116 @@
+html{
+  width: 100%;
+  margin: 0;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+  background-image: url('../images/wood.jpg');
+}
+
+h1, h2{
+  font-weight: 400;
+}
+
+h1{
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+main{
+  padding: 8px;
+  width: 710px;
+  margin: 50px auto;
+  background-color: #EFBC67;
+}
+
+img{
+  border: 15px #E5C497 solid;
+  -z-box-shadow: 0 0 6px rgba(50, 50, 50, .5);
+  -moz-box-shadow: 0 0 6px rgba(50,50, 50, .5);
+  -webkit-box-shadow: 0 0 6px rgba(50, 50, 50, .5);
+  box-shadow: 0 0 6px rgba(50, 50, 50, .5);
+  transform: rotate(-3deg);
+  width: 250px;
+  display: block;
+  margin: 20px auto;
+
+}
+
+p{
+  margin: 6px;
+}
+
+.form{
+  margin: 5px;
+  padding: 6px;
+  border: 3px black solid;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.field{
+  border-bottom: solid 1px #000;
+}
+
+.field .fieldLabel{
+  float: left;
+  height: 1.5em;
+  background-color: #EFBC67;
+  border-bottom: solid 1px #EFBC67;
+  margin-right: 6px;
+}
+
+.left .written{
+
+}
+
+.written{
+  font-family: Courier, monospace;
+  font-size: 16px;
+  width: 100%;
+}
+
+.signature{
+  font-family: 'Crafty Girls', cursive;
+  font-size: 18px;
+  text-align: center;
+  color: #2C5D6A;
+  margin: 0;
+  border-bottom: 1px #000 solid;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.header{
+  grid-column: 1 / span 2;
+  text-align: center;
+}
+
+.left{
+  grid-column: 1;
+  border-right: 3px #000 solid;
+  padding: 8px;
+}
+
+.right{
+  grid-column: 2;
+  padding: 8px;
+}
+
+.photoLabels{
+  margin-top: 10px;
+}
+
+.date{
+  float: right;
+}
+
+.formLabel{
+  margin-top: 0;
+}

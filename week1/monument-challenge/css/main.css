@@ -26,8 +26,8 @@ nav a {
   border-bottom: 2px #DDDDDD solid;
 }
 
-a {
-  text-decoration: none;
+a:hover{
+  color: #000;
 }
 
 article {
