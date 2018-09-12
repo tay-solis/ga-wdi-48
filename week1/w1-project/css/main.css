@@ -1,0 +1,60 @@
+/*
+Colors:
+Light Blue: #C5F5F7 (background)
+Dark Blue: #44545E (body)
+Blue-Grey: #7B98AA (links)
+Dark Blue-Grey: #44545E (link hover)
+Grey: #7C878E (form placeholder)
+*/
+
+html{
+  width: 100%;
+}
+body{
+  margin: 0;
+  color: #44545E;
+  background-color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+
+footer{
+  background-color: #C5F5F7;
+}
+
+a{
+  color: #7B98AA;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #44545E;
+}
+
+p{
+  font-family: 'Lato', sans-serif;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.splash{
+  width: 100%;
+  background-image: url('images/gallery_6.jpg');
+}
+
+.articles{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about{
+  background-color: #C5F5F7;
+}
