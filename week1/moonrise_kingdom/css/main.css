@@ -53,15 +53,22 @@ p{
 }
 
 .field{
-  border-bottom: solid 1px #000;
+
+}
+
+.fieldLabel{
+  font-size: 11px;
+  padding-right: 6px;
 }
 
 .field .fieldLabel{
-  float: left;
-  height: 1.5em;
-  background-color: #EFBC67;
-  border-bottom: solid 1px #EFBC67;
-  margin-right: 6px;
+  border-bottom: 1px solid #eabc6f;
+  top: 1px;
+}
+
+.field .written{
+    border-bottom: solid 1px #000;
+    display: block;
 }
 
 .left .written{
@@ -113,4 +120,22 @@ p{
 
 .formLabel{
   margin-top: 0;
+}
+
+.radioButtons{
+  text-align: center;
+  border: 1px #000 solid;
+  padding: 3px;
+  width: 100%;
+}
+
+.box{
+  width: 10px;
+  height: 10px;
+  border: 1px #000 solid;
+  display: inline;
+}
+
+.radioButtons p{
+  display: inline;
 }
