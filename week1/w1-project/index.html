@@ -13,11 +13,16 @@
 
 <body>
   <nav>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#About">About</a></li>
+      <li><a href="#newIssue">Gallery</a></li>
+      <li><a href="#archive">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -26,7 +31,7 @@
       <h1>Monument</h1>
       <h2>A Lifestyle Magazine</h2>
     </section>
-    <section class="archive">
+    <section id="archive">
       <h1>From the Archive</h1>
       <div class="articles">
         <article>
@@ -54,24 +59,23 @@
           <h3>Issue Eighteen — Food</h3>
           <p>
             Circular strategize energize shared unit of analysis, communities, social enterprise support, big data catalyze revolutionary humanitarian social entrepreneurship natural resources dynamic. To challenges and opportunities deep dive deep
-            dive optimism. Change-makers black lives matter, external partners bandwidth then, external partners innovation activate social return on investment expose the truth shine movements. LGBTQ+ disrupt thought leadership, best practices
-            communities; think tank capacity building big data problem-solvers silo think tank challenges and opportunities framework shared value. Changemaker, communities low-hanging fruit, radical expose the truth strengthening infrastructure
-            collaborate but correlation empower empower communities resist shared value. Shared unit of analysis vibrant grit, accessibility thought provoking think tank external partners. Program areas, venture philanthropy think tank game-changer
-            strategy, circular; correlation empower white paper youth.
+            dive optimism; think tank capacity building big data problem-solvers silo think tank challenges and opportunities framework shared value. Changemaker, communities low-hanging fruit, radical expose the truth strengthening infrastructure
+            collaborate but correlation empower empower communities resist shared value.
           </p>
           <button class="more">Read More</button>
         </article>
       </div>
     </section>
 
-    <section class="about">
+    <section id="about">
       <h1>About the Magazine</h1>
       <h2>A Lifestyle Magazine Crafted with Love</h2>
       <p>
         Big data; theory of change, scale and impact inspire outcomes shared unit of analysis rubric. Global, ideate transparent program areas, co-create efficient. Thought leadership the resistance preliminary thinking innovate human-centered
         global catalyze initiative grit scale and impact. Transparent scale and impact human-centered, engaging catalyze big data data B-corp co-create. Academic, impact resilient co-create LGBTQ+. Transparent; empathetic, social enterprise;
         leverage, movements social entrepreneur greenwashing milestones granular change-makers progress.
-
+      </p>
+      <p>
         Fairness overcome injustice, outcomes, shared unit of analysis our work effective altruism thought partnership. Movements venture philanthropy resilient agile expose the truth program areas resilient. Big data NGO social entrepreneur;
         inspirational disrupt scalable outcomes theory of change resilient cultivate thought partnership scale and impact. But; milestones, shine effective altruism equal opportunity scale and impact collaborative consumption incubator systems
         thinking society theory of change. Milestones, accessibility; co-create parse, program areas. Gender rights, social innovation collaborative consumption because innovate, justice, framework unprecedented challenge changemaker radical social
@@ -79,7 +83,7 @@
       </p>
     </section>
 
-    <section class="newIssue">
+    <section id="newIssue">
       <h1>Issue Twenty</h1>
       <h2>A Visual Guide to the Southwest</h2>
       <div class="gallery">
@@ -89,16 +93,19 @@
         <img src="images/gallery_4.jpg" />
         <img src="images/gallery_5.jpg" />
         <img src="images/gallery_6.jpg" />
+
       </div>
     </section>
 
-    <section class="contact">
+    <section id="contact">
       <h1>Get in Touch</h1>
       <form>
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
+        <div>
+          <input type="text" placeholder="Full Name"/>
+          <input type="text" placeholder="Email"/>
+          <input type="text" placeholder="Subject"/>
+        </div>
+        <textarea>Message</textarea>
         <button>Submit</button>
       </form>
     </section>
@@ -112,8 +119,11 @@
         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
       </ul>
     </div>
-    <input type="email" />
-    <button>Subscribe</button>
+    <div class="email">
+      <input type="email" placeholder="Email Address"/>
+      <button>Subscribe</button>
+    </div>
+
     <p>
       &copy; 2018 Sarah Holden
     </p>
