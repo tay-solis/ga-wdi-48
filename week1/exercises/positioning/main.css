@@ -1,0 +1,16 @@
+body{
+  background-color: #313340;
+}
+div{
+  width: 250px;
+  height: 250px;
+  margin: 8px;
+}
+
+.blue{
+  background-color: rgb(180, 226, 255);
+}
+
+.pink{
+  background-color: rgb(249, 188, 195);
+}
