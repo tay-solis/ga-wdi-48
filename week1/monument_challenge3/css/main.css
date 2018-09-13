@@ -17,7 +17,6 @@ body {
   color: #44545E;
   background-color: #FFF;
   font-family: 'Raleway', sans-serif;
-  text-align: center;
   display: flex;
   flex-direction: column;
   box-sizing:border-box;
@@ -45,7 +44,7 @@ nav ul{
   flex-direction: row;
   justify-content: center;
   list-style-type: none;
-
+  padding-left: 0;
 }
 nav ul li {
   padding: 2px;
@@ -126,6 +125,7 @@ article{
 }
 aside ul{
   text-align:left;
+  padding-left: 1em;
 }
 
 aside ul a{
@@ -141,7 +141,10 @@ aside{
 }
 
 /*Form*/
-form {
+#contact{
+  text-align: center;
+}
+main form {
   max-width: 750px;
   margin: 0 auto;
   display: flex;
@@ -178,7 +181,7 @@ input {
 }
 
 input[type="text"] {
-  width: 47%;
+  min-width: 47%;
 }
 
 .email input{
@@ -186,9 +189,25 @@ input[type="text"] {
   margin-right: 20px;
 }
 
+input[type="submit"]{
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 8px 35px;
+  color: #44545E;
+  border: 3px solid #44545E;
+  margin-top: 8px;
+  letter-spacing: .25em;
+  font-weight: bold;
+}
+
 /*Footer*/
 footer {
   background-color: #C5F5F7;
+  text-align: center;
+}
+
+footer form{
+  margin-bottom: 25px;
 }
 
 footer input{
@@ -196,7 +215,7 @@ footer input{
   border: none;
 }
 
-footer button {
+footer input[type="submit"] {
   background: none;
 }
 
@@ -206,6 +225,7 @@ footer ul {
   flex-direction: row;
   justify-content: center;
   padding-left: 0;
+  margin: 25px;
 }
 
 footer p{
@@ -216,13 +236,17 @@ footer p{
 
 i {
   font-size: 30px;
-  padding: 36px;
+  padding: 15px;
   color: #44545E;
 }
 
 
 /*Medium Size*/
 @media only screen and (max-width: 755px){
+  header h1{
+    font-size: 2em;
+    letter-spacing: .6em;
+  }
   .articles{
     display: flex;
     flex-direction: column;
@@ -279,6 +303,9 @@ i {
     box-sizing:border-box;
   }
 
+  form div{
+    flex-direction: column;
+  }
 
   article{
     width:inherit;

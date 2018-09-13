@@ -24,6 +24,7 @@ body {
   background-size: cover;
   background-image: url('../images/home_header_bg.jpg');
   background-attachment: fixed;
+  box-sizing: border-box;
 }
 
 /*Typography*/
@@ -161,7 +162,7 @@ article img {
 }
 
 /*Form*/
-form {
+main form {
   max-width: 750px;
   margin: 0 auto;
   display: flex;
@@ -191,8 +192,13 @@ input {
   font-weight: bold;
 }
 
-input[type="text"] {
+main input {
   width: 30%;
+}
+
+main input[type="submit"]{
+  margin-top: 8px;
+  width: 100%;
 }
 
 .email input{
@@ -210,8 +216,9 @@ footer input{
   border: none;
 }
 
-footer button {
+footer input[type="submit"] {
   background: none;
+  border: 3px solid #44545E;
 }
 
 i {
@@ -243,11 +250,11 @@ i {
     margin-bottom: 25px;
   }
 
-  form{
+  main form{
     flex-direction: column;
   }
 
-  input[type="text"] {
+  main input[type="text"] {
     width: 100%;
     box-sizing:border-box;
     margin-top: 9px;

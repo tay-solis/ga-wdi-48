@@ -99,14 +99,14 @@
 
     <section id="contact">
       <h1>Get in Touch</h1>
-      <form>
+      <form method="POST" action="/page">
         <div>
           <input type="text" placeholder="Full Name"/>
-          <input type="text" placeholder="Email"/>
+          <input type="email" placeholder="Email"/>
           <input type="text" placeholder="Subject"/>
         </div>
         <textarea>Message</textarea>
-        <button>Submit</button>
+        <input type="submit" placeholder="Submit">
       </form>
     </section>
   </main>
@@ -119,10 +119,10 @@
         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
       </ul>
     </div>
-    <div class="email">
+    <form class="email">
       <input type="email" placeholder="Email Address"/>
-      <button>Subscribe</button>
-    </div>
+      <input type="submit" placeholder="Subscribe">
+    </form>
 
     <p>
       &copy; 2018 Sarah Holden
