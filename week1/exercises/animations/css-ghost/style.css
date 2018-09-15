@@ -1,0 +1,62 @@
+.ghost{
+  position:absolute;
+  animation-name:roam-the-earth;
+  animation-duration:10s;
+  animation-iteration-count:infinite;
+  animation-timing-function:ease;
+  animation-direction:normal;
+}
+.ghost div{
+  height:220px;
+  opacity:0;
+  width:220px;
+  animation-name:hover;
+  animation-duration:0.5s;
+  animation-iteration-count:infinite;
+  animation-timing-function:linear;
+  animation-direction:alternate;
+  transition:opacity 0.2s;
+  background-image:url(ghost.png);
+}
+.ghost:hover div{
+  opacity:1;
+}
+@keyframes hover{
+  from{
+    bottom:0px;
+    transform:rotate(-5deg);
+  }
+  to{
+    bottom:30px;
+    transform:rotate(5deg);
+  }
+}
+@keyframes roam-the-earth{
+  0%{
+    bottom:100%;
+    left:-220px;
+  }
+  20%{
+    bottom:0px;
+    left:0px;
+    transform:rotate(0deg);
+  }
+  40%{
+    bottom:90%;
+    left:90%;
+    transform:rotate(360deg);
+  }
+  60%{
+    bottom:50%;
+    left:0px;
+    transform:rotate(0deg);
+  }
+  80%{
+    bottom:50%;
+    left:0px;
+  }
+  100%{
+    bottom:-220px;
+    left:100%;
+  }
+}

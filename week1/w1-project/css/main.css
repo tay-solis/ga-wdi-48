@@ -254,13 +254,15 @@ i {
     flex-direction: column;
   }
 
-  main input[type="text"] {
+  main input {
     width: 100%;
     box-sizing:border-box;
     margin-top: 9px;
   }
 
-
+  footer input{
+    margin-bottom: 9px;
+  }
 }
 
 /*Small Size*/
