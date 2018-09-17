@@ -1,0 +1,43 @@
+//Pascal Triangles are composed of rows of integers, where 1s are on the ends and the inner elements are the sum of adjacent elements.
+
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
+1 5 10 10 5 1
+1 6 15 20 15 6 1
+
+PROGRAM Pascal
+FOR 14 steps
+  MAKE ROW
+    Add a 1 to the beginning of the row
+    IF there are more than 1 items in the previous row
+      FOR the length of the previous row  -  1 //You are going to add adjacent numbers, but the last number will not have an adjacent number after it. Therefore, you only need to add the last number once.
+        Add the first number and the next number
+        Put the sum in the new row
+      ENDFOR
+      Put a 1 at the end
+  END MAKE ROW
+  Put row in list of rows (or print it with spaces in between each number)
+
+let rows = [];
+let steps = 14;
+let pascal= (steps) => {
+  for(let i = 0; i < steps; i++){
+    let newRow = [];
+    newRow.push(1);
+    if(rows.length > 0){
+      let prevRow = rows[rows.length - 1];
+      for (let j = 1; j < prevRow.length; j++){
+        newRow.push(prevRow[j-1] + prevRow[j]);
+      }
+      newRow.push(1)
+    }
+      rows.push(newRow);
+      // console.log(rows);
+    }
+  }
+  pascal(steps);
+
+  console.log(rows);

@@ -9,10 +9,7 @@ console.log('Server running');
 
 const express=require('express');
 const app=express();
-//
-// const { body,validationResult } = require('express-validator/check');
-// const { sanitizeBody } = require('express-validator/filter');
-//
+
 
 app.get('/', (req,res)=>{
   res.send('Hewwo World')
