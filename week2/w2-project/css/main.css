@@ -110,19 +110,25 @@ main{
 
 .menu article{
   max-width: 300px;
-  /* margin: 10px; */
+  margin: 10px;
 }
 
 section{
   margin-bottom: 3em;
+  padding-top: 5em;
 }
 
 /* Aside */
 
 aside{
   width: 25%;
-  margin-top: 108px;
+  margin-top: 6em;
+  padding-top: 5em;
   padding-right: 15px;
+  align-self: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4em;
 }
 
 .cart{
@@ -140,6 +146,7 @@ nav{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: #000;
   color: #FFF;
   position: fixed;
@@ -147,7 +154,7 @@ nav{
   width: 100%;
 }
 
-nav ul{
+.navLinks{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -165,9 +172,22 @@ nav a{
   color: #FFF;
 }
 
+.hamburger{
+  display: none;
+}
 
-img{
-  width: 100%;
+.cartIcon{
+  display: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+
+/* Footer */
+footer{
+  background-color:#000;
+  color: #FFF;
 }
 
 /*Medium & Small Screens*/
@@ -180,12 +200,61 @@ img{
     width: 100%;
     padding: 0;
   }
+  .menu article{
+    width: 100%;
+  }
   .menuSection{
     width: inherit;
     flex-direction:column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
   }
   aside{
     width:100%;
+    display: none;
+  }
+  nav{
+    padding: 0;
+  }
+  .cartIcon{
+    display: block;
+    margin-right: 20px;
+  }
+  .hamburger{
+    width: 40px;
+    margin-left: 20px;
+    display: block;
+  }
+  .hamLine{
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 8px;
+  }
+  aside{
+    display: none;
+    position: fixed;
+    top: 4em;
+    margin: 1px;
+    background-color: white;
+  }
+  aside h1{
+    margin-top:.5em;
+    font-size: 1.5em;
+  }
+  .cart{
+    text-align: center;
+  }
+  .navLinks{
+    position: absolute;
+    top: 3em;
+    width: 100%;
+    background-color: black;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
 }
