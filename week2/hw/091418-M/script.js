@@ -71,13 +71,13 @@ pythagorean();
 	Bonus: What would the pseudocode look like if you also had to find the smallest number?
 */
 /*
-small = the first number
-big = the first number
-FOR the length of the list of numbers
-  IF the number at this point in the list is bigger than x
-    Set big to the current number
-  IF the number at this point is smaller than small
-    Set small to the current number
+#small = the first number
+#big = the first number
+#FOR the length of the list of numbers
+#  IF the number at this point in the list is bigger than x
+#    Set big to the current number
+#  IF the number at this point is smaller than small
+#    Set small to the current number
 */
 
 /* Bonus

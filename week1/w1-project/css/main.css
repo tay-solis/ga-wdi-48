@@ -41,7 +41,6 @@ nav ul{
   display: flex;
   flex-direction: row;
   justify-content: center;
-
 }
 nav ul li {
   padding: 2px;
