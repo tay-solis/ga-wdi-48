@@ -152,6 +152,7 @@ nav{
   position: fixed;
   margin-top:0;
   width: 100%;
+  z-index: 999;
 }
 
 .navLinks{
@@ -211,6 +212,8 @@ footer{
   }
   aside{
     width:100%;
+    padding-top: 1em;
+    margin-top: 2em;
     display: none;
   }
   nav{
