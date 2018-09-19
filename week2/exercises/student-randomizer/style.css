@@ -1,0 +1,70 @@
+html{
+  width: 100%;
+}
+
+body{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("bg1.jpg");
+  background-size: cover;
+}
+
+.lists{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+ul{
+  height: 100%;
+  width: 20%;
+  text-align: center;
+  list-style-type: none;
+  font-family: 'VT323', monospace;
+  font-size: 2em;
+  padding-left: 0;
+}
+
+button{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  padding: 8px;
+  margin: 5px;
+  background-color: rgba(255, 255, 255,.3);
+  border: 1px white solid;
+  border-radius: 5px;
+  color: white;
+}
+
+.buttons{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  width: inherit;
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+  color: rgba(255, 255, 255, .75);
+  margin: 12px;
+}
+h2{
+  font-family: 'VT323', monospace;
+  font-size: 3em;
+  font-weight: normal;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+  margin: 6px;
+}
+
+.next {
+  height: 1em;
+}
+
+footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+}

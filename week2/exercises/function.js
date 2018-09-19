@@ -130,7 +130,7 @@ console.log(countChars("sSSSSsSSsssmmmmSMMSMSM"));
 //Needs import of local JSON
 
 let fs= require('fs');
-let myJSON = fs.readFileSync('products.json')
+let myJSON = fs.readFileSync('products.json');
 
 //getItems(objData) inputs a json object and returns an array of itemsPerPage
 

@@ -52,7 +52,13 @@ array.forEach(function(currentValue, i, arr){
 });
 
 // create a NEW list using map() (allowing us to make changes) with just the first letter of every element
+//array.map(function(string){string[0]});
 let newArray = array.map(string => string[0]);
+/*
+array.map(function(string){
+  return string[0];
+})
+*/
 console.log(array[0][0]);
 console.log(newArray);
 
@@ -64,7 +70,11 @@ console.log(twoArray);
 var numbers = [4, 7, 2, 9, 29, 11, 9, -4, -4, 2];
 const reducer = (sum, currentValue) => sum + currentValue;
 console.log(numbers.reduce(reducer));
-
+/*
+console.log(numbers.reduce(function(sum, n){
+  return sum + n;\
+}));
+*/
 
 
 // boolean logic
@@ -98,7 +108,7 @@ var truthTable = `
   !!545  => ${!!545} // coerces the truthy/falsy value into an actual boolean
 `;
 
-//console.log(truthTable)
+console.log(truthTable)
 
 
 // if/else
