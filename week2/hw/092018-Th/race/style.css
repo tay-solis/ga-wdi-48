@@ -1,0 +1,155 @@
+html {
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #0D0C0F;
+  height: 100vh;
+  font-family: 'Dosis', sans-serif;
+  font-weight: 200;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background: rgb(188, 185, 195);
+  background: -moz-linear-gradient(135deg, rgba(188, 185, 195, .6) 0%, rgba(24, 22, 27, 0.3) 100%);
+  background: -webkit-linear-gradient(135deg, rgba(188, 185, 195, .6) 0%, rgba(24, 22, 27, 0.3) 100%);
+  background: linear-gradient(135deg, rgba(188, 185, 195, .6) 0%, rgba(24, 22, 27, 0.3) 100%);
+}
+
+button:focus {
+    outline:none;
+}
+
+.welcome{
+  width: 100%;
+  position: fixed;
+  top: 10%;
+  text-align: center;
+  letter-spacing: .25em;
+  font-weight: 200;
+}
+
+
+.start{
+  font-family: 'Dosis', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  font-size: 1em;
+  font-weight: 200;
+  letter-spacing: .25em;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: all 1s ease;
+  opacity: 1;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start:hover{
+  height: 225px;
+  width: 225px;
+  font-size: 1.25em;
+  letter-spacing: .35em;
+  background-color: rgba(255,255,255, 0.1);
+}
+
+.game{
+  display: none;
+  height: 100%;
+  opacity: 0;
+}
+
+.planet{
+  background-color: #ED4748;
+  font-weight: 200;
+  letter-spacing: .25em;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: all 1s ease;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;;
+  text-align: center;
+}
+
+.computer{
+  width: 300px;
+  height: 300px;
+  transform: rotate(45deg);
+  animation-name: rotate;
+  animation-duration: 45s;
+  animation-timing-function: linear;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+}
+
+.player{
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -175px;
+  margin-left: -175px;
+  transform: rotate(45deg);
+}
+
+.dot{
+  width: 4px;
+  height: 4px;
+}
+
+.computer .dot{
+  background-color: red;
+}
+
+.player .dot{
+  background-color: #FFF;
+}
+
+
+@keyframes rotate{
+  0%{}
+  100%{
+    transform: rotate(-315deg);
+  }
+}
+
+@media screen and (max-width: 700){
+  .player{
+    height: 230px;
+    width: 230px;
+    margin-top: -115px;
+    margin-left: -115px;
+  }
+  .computer{
+    height: 210px;
+    width: 210px;
+    margin-top: -105px;
+    margin-left: -105px;
+  }
+}

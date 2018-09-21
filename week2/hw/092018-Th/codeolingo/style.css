@@ -9,14 +9,14 @@ body{
   text-align: center;
 }
 
-/*Layout*/
+/* Layout */
 
 header{
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 main{
@@ -28,8 +28,8 @@ main{
 
 .game{
   display: flex;
-  flex-direction: column;
   flex-basis: 0;
+  flex-direction: column;
 }
 
 .puzzle{
@@ -47,32 +47,36 @@ main{
 /*Typography*/
 
 ul{
-  margin: 10px;
-  width: 100%;
   display: flex;
   flex-flow: row wrap;
-  padding-left: 0;
   list-style-type: none;
+  margin: 10px;
+  padding-left: 0;
+  width: 100%;
 }
 
 li{
   background-color: rgb(230, 54, 7);
-  color: white;
-  text-align: center;
-  padding: 7px;
-  margin: 6px;
   border-radius: 5px;
+  color: white;
+  margin: 6px;
   min-width: 2em;
+  padding: 7px;
+  text-align: center;
 }
 
 button{
   background-color: rgb(230, 54, 7);
-  padding: 7px;
-  margin: 6px;
   border-radius: 5px;
-  min-width: 2em;
   color: white;
   font-size: 1em;
+  margin: 6px;
+  min-width: 2em;
+  padding: 7px;
+}
+
+button:focus {
+    outline:none;
 }
 
 .next{
