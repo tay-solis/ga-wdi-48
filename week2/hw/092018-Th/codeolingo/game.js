@@ -32,6 +32,34 @@ const shuffle = (arr) => {
   return arr;
 }
 
+//Vanilla JS alternatives to jQuery fadeIn/fadeOut
+const fadeOut = (elm) => {;
+  setInterval(function() {
+    if (!elm.style.opacity) elm.style.opacity = 1;
+    if (elm.style.opacity > 0) {
+      elm.style.opacity -= 0.1;
+    } else {
+      clearInterval();
+    }
+  }, 100);
+  setTimeout(function() {
+    elm.style.display = "none";
+  }, 1500);
+}
+
+const fadeIn = (elm) =>{
+  let count = 0;
+  setInterval(function(){
+    if (!elm.style.opacity) elm.style.opacity = 0;
+    if(elm.style.opacity < 1) {
+      count += .1
+      elm.style.opacity = count;
+    } else{
+      clearInterval();
+    }
+  }, 100);
+}
+
 //Accepts a Level object argument, checks the user's puzzle box against the Level object's solution property.
 const checkSolution = (level) => {
 
@@ -118,8 +146,11 @@ const setUpGame = (level) => {
 const init = () => {
   let level = levels[0];
   startBtn.addEventListener("click", function() {
-    header.style.display = "none";
-    main.style.display = "block";
+    fadeOut(header);
+    setTimeout(function() {
+      main.style.display = "block";
+      fadeIn(main);
+    }, 1600);
     setUpGame(levels[0]);
   });
 

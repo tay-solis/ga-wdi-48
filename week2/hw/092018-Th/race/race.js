@@ -8,6 +8,7 @@ const startScreen = document.querySelector(".startScreen")
 let spin = 45;
 let winState = true;
 
+//Vanilla JS alternatives to jQuery fadeIn/fadeOut
 const fadeOut = (elm) => {;
   setInterval(function() {
     if (!elm.style.opacity) elm.style.opacity = 1;
@@ -22,6 +23,20 @@ const fadeOut = (elm) => {;
   }, 1500);
 }
 
+const fadeIn = (elm) =>{
+  let count = 0;
+  setInterval(function(){
+    if (!elm.style.opacity) elm.style.opacity = 0;
+    if(elm.style.opacity < 1) {
+      count += .1
+      elm.style.opacity = count;
+    } else{
+      clearInterval();
+    }
+  }, 100);
+}
+
+//When the game is finished, it stops the animation and tells the user if they won or lost.
 const win = () =>{
   computer.style.webkitAnimationPlayState = "paused";
   planet.innerHTML = "Finish";
@@ -39,22 +54,8 @@ const lose = () =>{
 
 }
 
-const fadeIn = (elm) =>{
-  let count = 0;
-  setInterval(function(){
-    if (!elm.style.opacity) elm.style.opacity = 0;
-    if(elm.style.opacity < 1) {
-      count += .1
-      elm.style.opacity = count;
-    } else{
-      clearInterval();
-    }
-  }, 100);
-}
-
 const init = () => {
-
-
+  //The game starts with the homescreen -- when the start button is pushed, the homescreen fades and the game begins
   startBtn.addEventListener("click",  function() {
     fadeOut(startScreen);
     setTimeout(function() {
@@ -67,6 +68,7 @@ const init = () => {
       if(spin >- -315) lose();
     }, 45000);
 
+    //The player mashes the spacebar trying to complete a rotation before the computer does.
     window.addEventListener("keydown", function(e){
       if (spin <= -315 && winState != false){
         win();
@@ -74,7 +76,7 @@ const init = () => {
         lose();
         return;
       } else if(e.keyCode == "32"){
-        spin += -15;
+        spin += -2;
         player.style.transform = `rotate(${spin}deg)`;
       }
     });
