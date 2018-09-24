@@ -1,0 +1,302 @@
+/*
+Colors:
+Light Blue: #C5F5F7 (background)
+Dark Blue: #44545E (body)
+Blue-Grey: #7B98AA (links)
+Dark Blue-Grey: #44545E (link hover)
+Grey: #7C878E (form placeholder)
+*/
+/*Global*/
+html {
+  width: 100%;
+}
+
+/*Layout*/
+body {
+  margin: 0;
+  color: #44545E;
+  background-color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing:border-box;
+  background-size: cover;
+  background-image: url('../images/home_header_bg.jpg');
+  background-attachment: fixed;
+  box-sizing: border-box;
+}
+
+/*Typography*/
+h1, h2, h3, a {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/*Navbar*/
+nav{
+  background: #FFF;
+}
+nav ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+nav ul li {
+  padding: 2px;
+  margin: 0 2em;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 1.25em;
+}
+
+h2 {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+}
+
+a {
+  color: #7B98AA;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #44545E;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 0;
+}
+
+button {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 8px 35px;
+  color: #44545E;
+  border: 3px solid #44545E;
+  margin-top: 8px;
+  letter-spacing: .25em;
+  font-weight: bold;
+}
+
+/*Main Sections*/
+section {
+  padding: 75px 10px;
+}
+
+.splash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splash h1 {
+  color: #FFF;
+  font-size: 2em;
+  letter-spacing: .5em;
+}
+
+.splash h2 {
+  color: #FFF;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.splash ~ section{
+    background: #FFF;
+}
+
+.articles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+article {
+  max-width: 30%;
+  margin: 8px;
+}
+
+article img {
+  width: 90%;
+  height: auto;
+}
+
+#about {
+  background-color: #C5F5F7;
+  padding: 75px 200px;
+}
+
+.gallery {
+  width: 90%;
+  margin: 0 auto;
+  column-count: 3;
+  column-gap: 8px;
+}
+
+.gallery img {
+  max-width: 100%;
+  opacity: 0.75;
+  filter: alpha(opacity=75); /* For IE8 and earlier */
+  -webkit-transition: opacity 1.0s;
+  -moz-transition: opacity 1.0s;
+  -o-transition: opacity 1.0s;
+  transition: opacity 1.0s;
+}
+
+.gallery img:hover{
+  opacity: 1;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}
+
+/*Form*/
+main form {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+textarea {
+  margin-top: 8px;
+  width: inherit;
+  height: 10em;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 8px;
+  color: #7C878E;
+  border: 3px solid #44545E;
+  font-weight: bold;
+}
+
+input {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 8px;
+  background: #FFF;
+  color: #7C878E;
+  border: 3px solid #44545E;
+  font-weight: bold;
+}
+
+main input {
+  width: 30%;
+}
+
+main input[type="submit"]{
+  margin-top: 8px;
+  width: 100%;
+}
+
+.email input{
+  width: 300px;
+  margin-right: 20px;
+}
+
+/*Footer*/
+footer {
+  background-color: #C5F5F7;
+}
+
+footer input{
+  text-align: center;
+  border: none;
+}
+
+footer input[type="submit"] {
+  background: none;
+  border: 3px solid #44545E;
+}
+
+i {
+  font-size: 30px;
+  padding: 36px;
+  color: #44545E;
+}
+
+/*Medium Size*/
+@media only screen and (max-width: 755px){
+  .articles{
+    display: flex;
+    flex-direction: column;
+  }
+
+  article{
+    max-width: 100%;
+  }
+
+  #about{
+    margin: 0 auto;
+    padding: 12px;
+    width: 100%;
+  }
+
+  #about p{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  main form{
+    flex-direction: column;
+  }
+
+  main input {
+    width: 100%;
+    box-sizing:border-box;
+    margin-top: 9px;
+  }
+
+  footer input{
+    margin-bottom: 9px;
+  }
+}
+
+/*Small Size*/
+@media only screen and (max-width: 480px){
+  nav ul{
+    display: none
+  }
+  .hamburger {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 45px;
+  }
+  .hamburger > div{
+    height: 5px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 6px;
+    display: block;
+    z-index: -1;
+  }
+  .gallery {
+    width: 100%;
+    margin: 8px auto;
+    column-count: 2;
+    column-gap: 8px;
+  }
+
+  .email{
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+  }
+  .email input{
+    width: 100%;
+    box-sizing:border-box;
+  }
+}
