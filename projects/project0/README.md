@@ -8,6 +8,7 @@ This project is a rework of my original personal website. It simplifies my origi
 
 ## Technologies
 - Javascript — I decided to keep my code in vanilla Javascript, but in the spirit of education (and of the assignment), I have also written a jQuery version of my project.
+- NASA Astronomy Picture of the Day API
 
 ## Approach
 I tackled this project first by doing a thorough review/test of my original website. I noted the following major problems:
@@ -20,7 +21,7 @@ I tackled this project first by doing a thorough review/test of my original webs
 
 ## Notable Moments
 ### Victories
-
+- I have been meaning to call the NASA APOD API and have had trouble in the past. Turns out I was just using an invalid key, but I still got it to work this time around nonetheless -- in both JS and jQuery!
 ### Challenges
 
 ## To Do
