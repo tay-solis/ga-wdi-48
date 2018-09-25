@@ -228,11 +228,15 @@ i {
 
 .error{
   border: 2px solid #ED5254;
-  display: none;
 }
 
-.error .message{
+label{
   color: #ED5254;
+  height: 1em;
+  display: block;
+  font-size: 1em;
+  text-align: left;
+  font-family: 'Lato', sans-serif;
 }
 
 /*Medium Size*/

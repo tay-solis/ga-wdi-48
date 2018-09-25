@@ -99,13 +99,17 @@
 
     <section id="contact">
       <h1>Get in Touch</h1>
-      <form method="POST" action="form.php">
+      <form>
         <div>
           <input name="name" type="text" placeholder="Full Name" />
+          <label for="name"></label>
           <input name="email" type="email" placeholder="Email"/>
+          <label for="email"></label>
           <input name="subject" type="text" placeholder="Subject" />
+          <label for="subject"></label>
         </div>
         <textarea name="message">Message</textarea>
+        <label for="message"></label>
         <input type="submit" placeholder="Submit">
       </form>
     </section>
@@ -128,8 +132,11 @@
       &copy; 2018 Tay J Solis
     </p>
   </footer>
-
-<script src="js/form.js" type="text/javascript"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="js/main.js" type="text/javascript"></script>
 </body>
 
 </html>
