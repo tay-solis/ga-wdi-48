@@ -17,6 +17,8 @@ body{
   color: #eceefb;
   background-color: #232425;
 }
+
+/*Navbar*/
 nav{
   display: flex;
   flex-direction: row;
@@ -24,18 +26,25 @@ nav{
   position: fixed;
   top: 0;
   width: 100%;
+  padding: 8px;
   background-color: #232425;
 }
 nav ul{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin: 0;
+  line-height: 2em;
+}
+nav h1{
+  margin: 0;
 }
 
 .nav-title{
   color: #ec9443;
 }
 
+/* Header */
 
 header{
   display: flex;
@@ -49,6 +58,30 @@ header{
   background-position: center;
   background-image: url("../img/default-bg.jpg");
 }
+
+.headline{
+  background-color: rgba(227, 227, 227, 0.5);
+  padding: 3em;
+}
+
+header h1{
+  color: #ec9443;
+  font-size: 4em;
+  -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+}
+
+header h2{
+  color: white;
+  -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+}
+
+/* Main */
 
 main{
   width: 100%;
@@ -96,7 +129,6 @@ footer{
 /* Typography */
 h1,h2,h3,h4{
   text-align: center;
-  /* color: #232425; */
 }
 
 h1{
@@ -109,16 +141,6 @@ nav h1{
 }
 
 main h1{
-}
-
-h1, h2{
-  font-family: 'Julius Sans One', sans-serif;
-}
-
-h3{
-  font-family:'Libre Barcode 39 Text',sans-serif;
-  font-weight: 400;
-  font-size: 3em;
 }
 
 a{
@@ -155,20 +177,6 @@ em{
   color: #ec9443;
 }
 
-header h1{
-  color: #ec9443;
-  font-size: 4em;
-  -webkit-text-shadow: 9px 9px 13px -4px rgba(0,0,0,0.5);
-  -moz-text-shadow: 9px 9px 13px -4px rgba(0,0,0,0.5);
-  text-shadow: 9px 9px 13px -4px rgba(0,0,0,0.5);
-}
-
-header h2{
-  color: white;
-  -webkit-text-shadow: 9px 9px 13px -4px rgba(0,0,0,0.5);
-  -moz-text-shadow: 9px 9px 13px -4px rgba(0,0,0,0.5);
-  text-shadow: 9px 9px 13px -4px rgba(0,0,0,0.5);
-}
 
 /*Form*/
 main form {
@@ -199,14 +207,10 @@ input {
   border: 3px solid #7C878E;
   font-family: 'Julius Sans One', sans-serif;
   font-weight: bold;
-}
-
-main input {
-  width: 30%;
+  margin-top: 8px;
 }
 
 main input[type="submit"]{
-  margin-top: 8px;
   width: 100%;
 }
 

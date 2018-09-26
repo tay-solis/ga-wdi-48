@@ -34,8 +34,41 @@ $("#taskForm").on("submit", function(e){
                             <a href="#" class="edit">Edit</a>
                             <a href="#" class="remove">Remove</a>
                         </li>`);
+  $('#taskForm input').val('');
 });
 
-$('input[type="checkbox"]').change(function(){
+$('#taskList').on('change', 'input[type="checkbox"]', function(){
   $(this).parent().toggleClass('completed');
+});
+
+$('#taskList').on('click', '.edit', function(){
+  let content = $(this).prev().html();
+  $(this).parent().html(`<form class="editor">
+                              <input type="text" value="${content}">
+                              <button type="submit" class="btn">Save</button>
+                           </form>
+    `);
+});
+
+$('#taskList').on('submit', '.editor', function(e){
+  e.preventDefault();
+  let content = $(this).find('input[type="text"]').val();
+  $(this).parent().html(`
+                            <input type="checkbox">
+                            <span class="item">${content}</span>
+                            <a href="#" class="edit">Edit</a>
+                            <a href="#" class="remove">Remove</a>
+                        `);
+});
+
+$('#taskList').on('click', '.remove', function(){
+  $(this).parent().remove();
+});
+
+$('#deleteTasks').on('click', function(){
+  $('#taskList').empty();
+});
+
+$('#clearCompleted').on('click', function(){
+  $('.completed').remove();
 });
