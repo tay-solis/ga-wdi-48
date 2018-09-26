@@ -13,7 +13,6 @@ body{
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family: 'Monda', sans-serif;
   color: #eceefb;
   background-color: #232425;
 }
@@ -41,7 +40,7 @@ nav h1{
 }
 
 .nav-title{
-  color: #ec9443;
+  /* color: #ec9443; */
 }
 
 /* Header */
@@ -65,7 +64,7 @@ header{
 }
 
 header h1{
-  color: #ec9443;
+  /* color: #ec9443; */
   font-size: 4em;
   -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
   -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
@@ -132,7 +131,7 @@ h1,h2,h3,h4{
 }
 
 h1{
-  color: #ec9443;
+  /* color: #ec9443; */
   font-size: 3em;
 }
 
@@ -146,7 +145,7 @@ main h1{
 a{
   color: inherit;
   text-decoration: none;
-  color: #ec9443;
+  /* color: #ec9443; */
   transition: all .5s;
 }
 
@@ -174,7 +173,7 @@ i{
 }
 
 em{
-  color: #ec9443;
+  /* color: #ec9443; */
 }
 
 
@@ -191,7 +190,6 @@ textarea {
   margin-top: 8px;
   width: inherit;
   height: 10em;
-  font-family: 'Julius Sans One', sans-serif;
   font-size: 12px;
   padding: 8px;
   color: #7C878E;
@@ -205,7 +203,6 @@ input {
   background: #FFF;
   color: #7C878E;
   border: 3px solid #7C878E;
-  font-family: 'Julius Sans One', sans-serif;
   font-weight: bold;
   margin-top: 8px;
 }
