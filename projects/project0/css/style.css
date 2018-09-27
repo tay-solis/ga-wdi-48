@@ -2,7 +2,7 @@
 Colors
 Background Dark: #232425
 Background Light: #CBCEE4
-Text: #eceefb
+Text: #e6e8f6
 #f4904f
 */
 html {
@@ -25,16 +25,21 @@ nav {
   flex-direction: row;
   justify-content: space-around;
   position: fixed;
+  align-items: center;
   top: 0;
   width: 100%;
   padding: .5em;
   background-color: #262832;
   height: 2em;
-  box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+
   z-index: 999;
 }
 
-nav ul {
+.shadow{
+  box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+.nav-links {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -50,11 +55,9 @@ nav li {
   padding: 0;
 }
 
-.nav-title {
-}
 
 .hamburger {
-  width: 45px;
+  width: 40px;
   margin-right: 1em;
 }
 
@@ -96,12 +99,12 @@ header h1 {
 }
 
 header h2 {
-  color: #CBCEE4;
   -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
   -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
   -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
   text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
   margin: 0;
+  color: #e6e8f6;
 }
 
 /* Main */
@@ -112,7 +115,7 @@ main {
 }
 
 section {
-  margin: 75px 0;
+  margin: 4em 0;
   padding: 0;
 }
 
@@ -311,7 +314,7 @@ textarea {
   font-weight: bold;
   width: 100%;
   margin-top: 8px;
-  background-color: #CBCEE4
+  background-color: #e6e8f6;
 }
 
 input {
@@ -319,7 +322,7 @@ input {
   width: 100%;
   font-size: 12px;
   padding: 8px;
-  background: #CBCEE4;
+  background: #e6e8f6;
   color: #666881;
   border: 3px solid #666881;
   font-weight: bold;
@@ -374,18 +377,25 @@ input[type="submit"]{
 }
 
 @media only screen and (max-width: 480px) {
-  nav ul {
-    display: none
+  .nav-links{
+    display: none;
   }
-
-
-
+  nav ul {
+    padding: .5em;
+    position: absolute;
+    top: 3em;
+    background-color: #262832;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+    width: 100%;
+  }
   .hamburger>div {
     height: 5px;
     border-radius: 5px;
     background-color: #CBCEE4;
     margin-bottom: 6px;
     display: block;
-    z-index: -1;
+  }
+  #show{
+    display: show;
   }
 }
