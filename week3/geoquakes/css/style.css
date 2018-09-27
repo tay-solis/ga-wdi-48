@@ -12,8 +12,16 @@ h1{
   font-family: 'Cinzel Decorative', cursive;
 }
 
-.mag{
+.med{
   color: #edce53;
+}
+
+.big{
+  color: #f7803d;
+}
+
+.ultra{
+  color: #f73d3d;
 }
 
 #map {

@@ -9,37 +9,48 @@ class Slide{
     this.desc = desc;
     this.link = link;
   }
+  createSlide(){
+    let elm = `
+                  <div class="label">
+                  <h2>${this.title}</h2>
+                    <p>${this.desc}</p>
+                  </div>
+                `
+    $('.slideshow').css('background-image', `url(${this.imgUrl})`)
+    return elm;
+  }
 }
 
 const codeolingoSlide = new Slide(
-  '../img/slides/codeolingoSlide.png',
+  'img/slides/codeolingoSlide.png',
   'Code-o-Lingo',
   'A web app for testing beginning coding knowledge modelled after Duolingo\'s language-learning app',
   '#'
 );
 
 const syncSlide = new Slide(
-  '../img/slides/syncSlide.png',
+  'img/slides/syncSlide.jpg',
   'SYNC',
   'A short science fiction comic created for Stack Deck Press\'s We\'re Still Here anthology',
   '#'
 );
 
 const christineSlide = new Slide(
-  '../img/slides/christineSlide.png',
+  'img/slides/christineSlide.png',
   'Christine Cueto Portfolio',
   'A portfolio website designed for photographer Christine Cueto on Squarespace',
   '#'
 );
 
 const wanderlustSlide = new Slide(
-  '../img/slides/wanderlistSlide.png',
+  'img/slides/wanderlustSlide.jpg',
   'Wanderlust',
   'A speculative fiction graphic novel about Mars Colonization',
   '#'
 );
 
-let slideshow = [];
+let slideshow = [wanderlustSlide, codeolingoSlide, syncSlide, christineSlide];
+  let place = 0;
 
 /*
 Receives an image URL from NASA's Astronomy Picture of the Day API and sets it as the header background
@@ -55,3 +66,41 @@ $.ajax({
     $('header').css("background-image"), 'url("../img/default-bg.jpg")'
   }
 });
+
+const setUpSlideshow = () =>{
+  for(let i = 0; i < slideshow.length; i++){
+    $('.place-dots').append(`<div class="dot"></div>`);
+  }
+  $('.place-dots').children().eq(0).addClass('selected');
+  $('.slides').append(slideshow[0].createSlide());
+
+  $('.next').on('click', function(){
+    place++;
+    if(place < slideshow.length){
+      $('.place-dots').children().removeClass('selected');
+      $('.place-dots').children().eq(place).addClass('selected');
+      $('.slides').html(slideshow[place].createSlide());
+    } else {
+      place = 0;
+      $('.place-dots').children().removeClass('selected');
+      $('.place-dots').children().eq(place).addClass('selected');
+      $('.slides').html(slideshow[place].createSlide());
+    }
+  });
+  $('.prev').on('click', function(){
+    place--;
+    if(place > 0){
+      $('.place-dots').children().removeClass('selected');
+      $('.place-dots').children().eq(place).addClass('selected');
+      $('.slides').html(slideshow[place].createSlide());
+    } else {
+      place = slideshow.length - 1;
+      $('.place-dots').children().removeClass('selected');
+      $('.place-dots').children().eq(place).addClass('selected');
+      $('.slides').html(slideshow[place].createSlide());
+    }
+  });
+
+}
+
+setUpSlideshow();

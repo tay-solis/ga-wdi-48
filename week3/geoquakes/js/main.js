@@ -24,6 +24,10 @@ if >2 days returns x days ago
 */
 function timeAgo(past){
   let time = Math.floor((today - past)/(1000* 60 * 60));
+  if (time < 1){
+    time = Math.floor((today - past)/(1000* 60));
+    return `${time} minutes ago`;
+  }
   if (time < 24){
     return`${time} hours ago`;
   } else{
@@ -42,13 +46,23 @@ $.ajax({
   success: function(response) {
     for (let i = 0; i < response.features.length; i++) {
       let quake = response.features[i];
-      console.log(quake);
+
       let mag = quake.properties.mag;
+      let grade = ""
+      if (mag < 5){
+        grade = 'med';
+      } else if (mag >= 5 && mag <6){
+        grade = 'big';
+      } else {
+        grade = 'ultra';
+      }
+
       let place = quake.properties.place
+      
       let quakeDate = new Date(quake.properties.time);
       let timeStr = timeAgo(quakeDate);
 
-      $('#info').append(`<p><span class="mag">M ${mag}</span> // ${place} // ${timeStr}</p>`);
+      $('#info').append(`<p><span class="${grade}">M ${mag}</span> // ${place} // ${timeStr}</p>`);
 
       addMarker({
         lng: quake.geometry.coordinates[0],
