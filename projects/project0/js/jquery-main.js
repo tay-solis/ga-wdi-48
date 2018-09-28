@@ -10,13 +10,14 @@ class Slide {
     this.link = link;
   }
   createSlide() {
+    $('.portfolio-link').attr('href', this.link);
     let elm = `
                   <div class="label">
                   <h2>${this.title}</h2>
                     <p>${this.desc}</p>
                   </div>
                 `
-    $('.slideshow').css('background-image', `url(${this.imgUrl})`)
+    $('.slideshow').css('background-image', `url(${this.imgUrl})`);
     return elm;
   }
 }
@@ -25,28 +26,28 @@ const codeolingoSlide = new Slide(
   'img/slides/codeolingoSlide.png',
   'Code-o-Lingo',
   'A web app for testing beginning coding knowledge modelled after Duolingo\'s language-learning app',
-  '#'
+  'portfolio/code-o-lingo.html'
 );
 
 const syncSlide = new Slide(
   'img/slides/syncSlide.jpg',
   'SYNC',
   'A short science fiction comic created for Stack Deck Press\'s We\'re Still Here anthology',
-  '#'
+  'portfolio/sync.html'
 );
 
 const christineSlide = new Slide(
   'img/slides/christineSlide.png',
   'Christine Cueto Portfolio',
   'A portfolio website designed for photographer Christine Cueto on Squarespace',
-  '#'
+  'https://christinecueto.com'
 );
 
 const wanderlustSlide = new Slide(
   'img/slides/wanderlustSlide.jpg',
   'Wanderlust',
   'A speculative fiction graphic novel about Mars Colonization',
-  '#'
+  'portfolio/wanderlust.html'
 );
 
 let slideshow = [wanderlustSlide, codeolingoSlide, syncSlide, christineSlide];
@@ -82,7 +83,6 @@ $.ajax({
     for (let i = 0; i < books.length; i++) {
 
       let book = books[i];
-      debugger;
 
       let title = book.querySelector('title').innerHTML;
       let author = book.querySelector('name').innerHTML;
@@ -101,38 +101,56 @@ $.ajax({
   }
 });
 
+/* Changes the slide image and which dot is selected becaused on the index of the slide.*/
+
+const nextSlide = () => {
+  place++;
+  if (place < slideshow.length) {
+    $('.place-dots').children().removeClass('selected');
+    $('.place-dots').children().eq(place).addClass('selected');
+    $('.slides').html(slideshow[place].createSlide());
+  } else {
+    place = 0;
+    $('.place-dots').children().removeClass('selected');
+    $('.place-dots').children().eq(place).addClass('selected');
+    $('.slides').html(slideshow[place].createSlide());
+  }
+}
+
+const prevSlide = () => {
+  place--;
+  if (place > 0) {
+    $('.place-dots').children().removeClass('selected');
+    $('.place-dots').children().eq(place).addClass('selected');
+    $('.slides').html(slideshow[place].createSlide());
+  } else {
+    place = slideshow.length - 1;
+    $('.place-dots').children().removeClass('selected');
+    $('.place-dots').children().eq(place).addClass('selected');
+    $('.slides').html(slideshow[place].createSlide());
+  }
+}
+
 const setUpSlideshow = () => {
   for (let i = 0; i < slideshow.length; i++) {
     $('.place-dots').append(`<div class="dot"></div>`);
+    $('.dot').on('click', function() {
+      $('.place-dots').children().removeClass('selected');
+      $(this).addClass('selected');
+      $('.slides').html(slideshow[$('.dot.selected').index()].createSlide());
+
+    });
   }
   $('.place-dots').children().eq(0).addClass('selected');
   $('.slides').append(slideshow[0].createSlide());
 
+
   $('.next').on('click', function() {
-    place++;
-    if (place < slideshow.length) {
-      $('.place-dots').children().removeClass('selected');
-      $('.place-dots').children().eq(place).addClass('selected');
-      $('.slides').html(slideshow[place].createSlide());
-    } else {
-      place = 0;
-      $('.place-dots').children().removeClass('selected');
-      $('.place-dots').children().eq(place).addClass('selected');
-      $('.slides').html(slideshow[place].createSlide());
-    }
+    nextSlide();
   });
+
   $('.prev').on('click', function() {
-    place--;
-    if (place > 0) {
-      $('.place-dots').children().removeClass('selected');
-      $('.place-dots').children().eq(place).addClass('selected');
-      $('.slides').html(slideshow[place].createSlide());
-    } else {
-      place = slideshow.length - 1;
-      $('.place-dots').children().removeClass('selected');
-      $('.place-dots').children().eq(place).addClass('selected');
-      $('.slides').html(slideshow[place].createSlide());
-    }
+    prevSlide();
   });
   $('.hamburger').on("click", function() {
     $('.nav-links').slideToggle();
@@ -154,6 +172,19 @@ const setUpSlideshow = () => {
       }
     });
   });
+
+    $(window).scroll(function() {
+      let scrollDistance = $(window).scrollTop();
+
+      // Assign active class to nav links while scolling
+      $('nav li').removeClass('active');
+      $('section').each(function(i) {
+        if ($(this).position().top <= scrollDistance) {
+          $('nav li').removeClass('active');  
+          $('nav li').eq(i).addClass('active');
+        }
+      });
+    }).scroll();
 
   window.addEventListener("resize", function() {
     if (window.matchMedia("(min-width: 480px)").matches) {
