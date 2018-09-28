@@ -56,6 +56,7 @@ let place = 0;
 Receives an image URL from NASA's Astronomy Picture of the Day API and sets it as the header background
 If the API is down, it leaves the default background up.
 */
+
 $.ajax({
   method: 'GET',
   url: 'https://api.nasa.gov/planetary/apod?api_key=dcBZXp3YhRP5hfMxGNxJqCVEGHfPENe04CAdJste',
@@ -64,6 +65,39 @@ $.ajax({
   },
   error: function() {
     $('header').css("background-image"), 'url("../img/default-bg.jpg")'
+  }
+});
+
+/* Receives the currently reading shelf from my Goodreads account and displays it in my About section.*/
+const goodreadsKey = 'JlxWctDXteHbx9kpoXmYQ';
+const goodreadsShelfUrl = 'https://www.goodreads.com/review/list/17900080.xml?key=JlxWctDXteHbx9kpoXmYQ&shelf=currently-reading'
+
+$.ajax({
+  method: 'GET',
+  url: goodreadsShelfUrl,
+  dataType: "xml",
+  success: function(response) {
+    $('.currently-reading').prepend('<h2>What I\'m Reading</h2>');
+    let books = $(response).find('books').children();
+    for (let i = 0; i < books.length; i++) {
+
+      let book = books[i];
+      debugger;
+
+      let title = book.querySelector('title').innerHTML;
+      let author = book.querySelector('name').innerHTML;
+      let link = book.querySelector('link').innerHTML;
+      let imageurl = book.querySelector('image_url').innerHTML;
+
+      let html = `<li>
+                    <a href="${link}">
+                    <img src="${imageurl}"/>
+                    <p><em>${title}</em> <br/>by ${author}</p>
+                    </a>
+                    </li>`;
+
+      $('.reading-list').append(html);
+    }
   }
 });
 
@@ -127,6 +161,30 @@ const setUpSlideshow = () => {
     } else {
       $('.nav-links').attr('style', 'display: none;')
     }
+  });
+
+  $('form').on('submit', function(e) {
+    e.preventDefault();
+    console.log("User Submitted");
+    $(this).find('input').not("input[type='submit']").filter(function() {
+      let name = $(this).attr('name');
+      if ($(this).val() == "") {
+        $(this).addClass('error');
+        $(`label[for=${name}]`).text(`Please enter a valid ${name}`);
+      } else {
+        $(this).removeClass('error');
+        $(`label[for=${name}]`).text(``);
+      }
+    });
+    $(this).find('textarea').filter(function() {
+      if ($(this).val() == "Message") {
+        $(this).addClass('error');
+        $('label[for="message"]').text('Message cannot be empty');
+      } else {
+        $(this).removeClass('error');
+        $('label[for="message"]').text('');
+      }
+    });
   });
 }
 

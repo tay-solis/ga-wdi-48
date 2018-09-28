@@ -7,8 +7,12 @@ Project 0
 This project is a rework of my original personal website. It simplifies my original website by using CSS3 layout tools (grid and flexbox), better responsive design, and individual web development projects.
 
 ## Technologies
-- Javascript — I decided to keep my code in vanilla Javascript, but in the spirit of education (and of the assignment), I have also written a jQuery version of my project.
+- HTML5
+- CSS3
+- Javascript ES6
+- jQuery
 - NASA Astronomy Picture of the Day API
+- GoodReads Shelf API
 
 ## Approach
 I tackled this project first by doing a thorough review/test of my original website. I noted the following major problems:
@@ -18,6 +22,11 @@ I tackled this project first by doing a thorough review/test of my original webs
 - There were several formatting problems, including but not limited to text that flowed outside of divs on window resize.
 - Updated to a more modern style
 
+After meeting these challenges, I proceeded to work on styling and content. I was particularly interested in:
+
+- A polished user experience, including responsiveness and ease of mobile use.
+- More interesting content in my About section
+- Integrating APIs to my website content
 
 ## Notable Moments
 ### Victories
@@ -25,7 +34,6 @@ I tackled this project first by doing a thorough review/test of my original webs
 ### Challenges
 
 ## To Do
-- Vanilla JS Scroll Animation
 - Reveal Animation
 - Swipe on Slideshow
-- Treehouse API
+- GoodReads Currently Reading API

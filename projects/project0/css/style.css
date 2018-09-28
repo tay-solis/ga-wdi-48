@@ -24,11 +24,11 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: .5em;
   position: fixed;
   align-items: center;
   top: 0;
   width: 100%;
-  padding: .5em;
   background-color: #262832;
   height: 2em;
 
@@ -49,6 +49,7 @@ nav {
 
 nav h1 {
   margin: 0;
+  color: #f4904f;
 }
 
 nav li {
@@ -91,18 +92,18 @@ header {
 header h1 {
   /* color: #f4904f; */
   font-size: 4em;
-  /* -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
-  -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
-  -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, .75); */
+  -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
   margin: 0;
 }
 
 header h2 {
-  -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
-  -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
-  -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, .75);
+  -o-text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  -moz-text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  -webkit-text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, .5);
   margin: 0;
   color: #e6e8f6;
 }
@@ -125,11 +126,27 @@ section {
   justify-content: center;
 }
 
-#about {
-  width: 100%;
+.social-links li{
+
 }
 
-#about>div {
+.spin{
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused;
+}
+
+#about {
+  width: 100%;
+
+}
+
+#about h2{
+  margin-top: 3em;
+}
+
+.about-me{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -139,12 +156,50 @@ section {
   max-width: 500px;
   height: auto;
   border-radius: 50%;
-  align-self: flex-end;
+  align-self: center;
 }
 
-.about-me {
+.about-text {
   width: 40%;
   text-align: left;
+}
+.shut-up-stuff{
+  width: 40%;
+  margin: 0 auto;
+  font-size: 1.75em;
+}
+
+.shut-up-stuff img{
+  width: 100px;
+  height: auto;
+  margin-right: 1em;
+}
+
+.shut-up-stuff li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.shut-up-stuff p{
+  margin-left: 1em;
+}
+
+.reading-list{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.reading-list li{
+  max-width: 240px;
+}
+
+.reading-list img{
+  margin: 0 auto;
+  max-width: 200px;
+  display:block;
+
 }
 
 #portfolio {
@@ -164,7 +219,7 @@ section {
   margin-bottom: 6px;
   padding-top: 65px;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -250,6 +305,11 @@ h1 {
   font-size: 3em;
 }
 
+h2{
+  font-size: 2em;
+  color: #f4904f;
+}
+
 nav h1 {
   font-size: 1.5em;
 }
@@ -264,7 +324,11 @@ a {
 
 a:hover {
   color: #f4904f;
-  font-size: 1.15em;
+  letter-spacing: .25em;
+}
+
+.spin:hover{
+  animation-play-state: running;
 }
 
 p {
@@ -332,6 +396,18 @@ input {
 input[type="submit"]{
   box-sizing: border-box;
 }
+.error{
+  border: 2px solid #f4904f;
+}
+
+label{
+  color:#f4904f;
+  height: 1em;
+  margin-top: 2px;
+  display: block;
+  font-size: .9em;
+  text-align: left;
+}
 
 
 @media only screen and (max-width: 840px) {
@@ -343,7 +419,7 @@ input[type="submit"]{
     padding: 0;
   }
 
-  #about>div {
+  .about-me {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -354,8 +430,12 @@ input[type="submit"]{
     align-self: center;
   }
 
-  .about-me {
+  .about-text {
     text-align: center;
+    width: 100%;
+  }
+
+  .shut-up-stuff{
     width: 100%;
   }
 
@@ -397,5 +477,11 @@ input[type="submit"]{
   }
   #show{
     display: show;
+  }
+}
+
+@keyframes spin {
+  100%{
+    transform: rotate(1440deg);
   }
 }

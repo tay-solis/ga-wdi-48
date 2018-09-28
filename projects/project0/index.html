@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+<link rel="icon" href="img/logo-white-transparent.png" />
 </head>
 
 <body>
@@ -17,7 +18,7 @@
       <div class="hamLine"></div>
       <div class="hamLine"></div>
     </div>
-    
+
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
@@ -35,26 +36,39 @@
     <section id="about">
 
       <h1>Call Me Tay</h1>
-      <div>
+      <div class="about-me">
         <img src="img/portrait.jpg" class="portrait"/>
-        <div class="about-me">
+        <div class="about-text">
           <p>
             I am an artist, full-stack web developer, and teacher who approaches technology through an interdisciplinary lens. I apply thoughtful, creative solutions to my work in web development as well as the big questions of justice and equity, community building, and the ways that technology shapes humanity’s future.
           </p>
           <p>
-            My work is primarily informed by interest rather than an adherence to a particular form or context. In professional and artistic contexts, I have explored science fiction, Filipino American history, work in nonprofit fields, holistic learning, mental health, radical self-determination, and human-centered design.
+            I am currently seeking opportunities working as a developer in tech at a company that is actively grappling with the social and ethical implications of the technology they are building. I believe in a future build for all of humanity, especially communities that are barred from entry to the rooms where the future is decided.
           </p>
+        </div>
+      </div>
+        <h2>What I Can't Shut Up About</h2>
+        <ul class="shut-up-stuff">
+          <li><img class="spin" src="img/icons/planets.png"/>The Inevitable Heat Death of the Universe</li>
+          <li><img class="spin" src="img/icons/bee.png" />Bug Stuff</li>
+          <li><img class="spin" src="img/icons/eye.png" />Digital Privacy</li>
+          <li><img class="spin" src="img/icons/solar-system.png"/>Humanity's Interplanetary Future</li>
+          <li><img class="spin" src="img/icons/waves.png"/>Saving the Oceans</li>
+        </ul>
+        <div class="currently-reading">
+          <ul class="reading-list">
 
+          </ul>
         </div>
 
       </div>
       <ul class="social-links">
-        <li><a href="https://www.instagram.com/manyhands.tay/"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/tayjsolis/"><i class="fab fa-linkedin"></i></a></li>
-        <li><a href="https://medium.com/@tayjsolis"><i class="fab fa-medium"></i></a></li>
-        <li><a href="https://github.com/tay-solis"><i class="fab fa-github-square"></i></a></li>
-        <li><a href="https://codepen.io/tay-solis/"><i class="fab fa-codepen"></i></a></li>
-        <li><a href="mailto:tayjsolis@gmail.com"><i class="fas fa-envelope-square"></i></a></li>
+        <li class="spin"><a href="https://www.instagram.com/manyhands.tay/"><i class="fab fa-instagram"></i></a></li>
+        <li class="spin"><a href="https://www.linkedin.com/in/tayjsolis/"><i class="fab fa-linkedin"></i></a></li>
+        <li class="spin"><a href="https://medium.com/@tayjsolis"><i class="fab fa-medium"></i></a></li>
+        <li class="spin"><a href="https://github.com/tay-solis"><i class="fab fa-github-square"></i></a></li>
+        <li class="spin"><a href="https://codepen.io/tay-solis/"><i class="fab fa-codepen"></i></a></li>
+        <li class="spin"><a href="mailto:tayjsolis@gmail.com"><i class="fas fa-envelope-square"></i></a></li>
       </ul>
     </section>
 
@@ -76,8 +90,12 @@
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
+      <h1>Skills</h1>
+
       <div>
+        <p>
+          <a href="https://drive.google.com/open?id=1NThiy8EP9O6LMPCnIFYgXtFSsTpecK5u">My Resume</a>
+        </p>
         <p>
           <em>Languages:</em> JavaScript (ES5, ES6). Python. Ruby on Rails. CSS3. HTML5. RESTful APIs. Java. C++. Egg.</p>
         <p>
@@ -100,10 +118,14 @@
         </p>
         <form>
             <input name="name" type="text" placeholder="Full Name" />
+            <label for="name"></label>
             <input name="email" type="email" placeholder="Email"/>
-            <input name="subject" type="text" placeholder="Subject" />
+            <label for="email"></label>
+            <input name="subject" type="text" placeholder="Subject"/>
+            <label for="subject"></label>
 
             <textarea name="message">Message</textarea>
+            <label for="message"></label>
             <input type="submit" placeholder="Submit">
         </form>
       </section>
@@ -111,12 +133,12 @@
 
   <footer>
     <ul class="social-links">
-      <li><a href="https://www.instagram.com/manyhands.tay/"><i class="fab fa-instagram"></i></a></li>
-      <li><a href="https://www.linkedin.com/in/tayjsolis/"><i class="fab fa-linkedin"></i></a></li>
-      <li><a href="https://medium.com/@tayjsolis"><i class="fab fa-medium"></i></a></li>
-      <li><a href="https://github.com/tay-solis"><i class="fab fa-github-square"></i></a></li>
-      <li><a href="https://codepen.io/tay-solis/"><i class="fab fa-codepen"></i></a></li>
-      <li><a href="mailto:tayjsolis@gmail.com"><i class="fas fa-envelope-square"></i></a></li>
+      <li class="spin"><a href="https://www.instagram.com/manyhands.tay/"><i class="fab fa-instagram"></i></a></li>
+      <li class="spin"><a href="https://www.linkedin.com/in/tayjsolis/"><i class="fab fa-linkedin"></i></a></li>
+      <li class="spin"><a href="https://medium.com/@tayjsolis"><i class="fab fa-medium"></i></a></li>
+      <li class="spin"><a href="https://github.com/tay-solis"><i class="fab fa-github-square"></i></a></li>
+      <li class="spin"><a href="https://codepen.io/tay-solis/"><i class="fab fa-codepen"></i></a></li>
+      <li class="spin"><a href="mailto:tayjsolis@gmail.com"><i class="fas fa-envelope-square"></i></a></li>
     </ul>
   </footer>
 </body>
