@@ -6,7 +6,7 @@
   <title>Althea || Tay</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css?family=Nunito|Roboto" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poller+One|Raleway" rel="stylesheet">
 <link rel="icon" href="img/logo-white-transparent.png" />
 </head>
 
@@ -52,12 +52,12 @@
       </div>
         <h2>What I Can't Shut Up About</h2>
         <ul class="shut-up-stuff">
-          <li><img class="spin" src="img/icons/planets.png"/>The Inevitable Heat Death of the Universe</li>
-          <li><img class="spin" src="img/icons/bee.png" />Bug Stuff</li>
-          <li><img class="spin" src="img/icons/eye.png" />Digital Privacy</li>
-          <li><img class="spin" src="img/icons/mortarboard.png"/>Education Justice</li>
-          <li><img class="spin" src="img/icons/solar-system.png"/>Humanity's Interplanetary Future</li>
-          <li><img class="spin" src="img/icons/waves.png"/>Saving the Oceans</li>
+          <li class="reveal"><img class="spin" src="img/icons/planets.png"/>The Inevitable Heat Death of the Universe</li>
+          <li class="reveal-reset"><img class="spin" src="img/icons/bee.png" />Bug Stuff</li>
+          <li class="reveal-reset"><img class="spin" src="img/icons/eye.png" />Digital Privacy</li>
+          <li class="reveal-reset"><img class="spin" src="img/icons/mortarboard.png"/>Education Justice</li>
+          <li class="reveal-reset"><img class="spin" src="img/icons/solar-system.png"/>Humanity's Interplanetary Future</li>
+          <li class="reveal-reset"><img class="spin" src="img/icons/waves.png"/>Saving the Oceans</li>
         </ul>
         <div class="currently-reading">
           <ul class="reading-list">
@@ -99,22 +99,21 @@
       <h1>Skills</h1>
 
       <div>
-        <p>
-          <a href="https://drive.google.com/open?id=1NThiy8EP9O6LMPCnIFYgXtFSsTpecK5u">My Resume</a>
-        </p>
-        <p>
+
+          <a href="https://drive.google.com/open?id=1NThiy8EP9O6LMPCnIFYgXtFSsTpecK5u"><h2>My Resume</h2></a>
+        <p class="reveal-stay">
           <em>Languages:</em> JavaScript (ES5, ES6). Python. Ruby on Rails. CSS3. HTML5. RESTful APIs. Java. C++. Egg.</p>
-        <p>
+        <p class="reveal-stay">
           <em>Frameworks and Libraries:</em> React. jQuery. Node.js. AJAX. <br />
         </p>
-          <p>
+          <p class="reveal-stay">
             <em>Design:</em> Adobe Creative Suite (Photoshop, Premiere, InDesign, Illustrator). Sketch. Human-Centered Design.<br />
         </p>
-            <p>
+            <p class="reveal-stay">
               <em>Version Control and Workflow Management:</em> Git. Github. Trello. npm. AGILE.</p>
           </p>
       </div>
-      <img src="img/logo-white-transparent.png" class="logo" />
+      <img src="img/logo-white-transparent.png" class="logo spin" />
     </section>
 
       <section id="contact">
@@ -152,6 +151,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
 <script src="js/jquery-main.js"></script>
 
 </html>

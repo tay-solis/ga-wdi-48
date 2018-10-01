@@ -89,7 +89,7 @@ $.ajax({
       let link = book.querySelector('link').innerHTML;
       let imageurl = book.querySelector('image_url').innerHTML;
 
-      let html = `<li>
+      let html = `<li class="reveal">
                     <a href="${link}">
                     <img src="${imageurl}"/>
                     <p><em>${title}</em> <br/>by ${author}</p>
@@ -180,7 +180,7 @@ const setUpSlideshow = () => {
       $('nav li').removeClass('active');
       $('section').each(function(i) {
         if ($(this).position().top <= scrollDistance) {
-          $('nav li').removeClass('active');  
+          $('nav li').removeClass('active');
           $('nav li').eq(i).addClass('active');
         }
       });
@@ -216,6 +216,19 @@ const setUpSlideshow = () => {
         $('label[for="message"]').text('');
       }
     });
+  });
+
+//Uses the ScrollReveal Library to have images appear when they enter the window
+  ScrollReveal().reveal('.reveal-reset', {
+    reset: true,
+    delay: 400,
+    interval: 100
+  });
+
+  ScrollReveal().reveal('.reveal-stay', {
+    reset: false,
+    delay: 400,
+    interval: 100
   });
 }
 

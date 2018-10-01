@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   color: #CBCEE4;
   background-color: #262832;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .spin{
@@ -43,12 +43,12 @@ body {
 h1, h2, h3, h4 {
   text-align: center;
   margin: 0;
-  font-family: 'Nunito', cursive;
   font-weight: 400;
 }
 
 h1 {
   /* color: #f4904f; */
+  font-family: 'Poller One', cursive;
   font-size: 3em;
 }
 
@@ -80,6 +80,7 @@ a:hover {
 
 p {
   letter-spacing: .15em;
+  line-height: 1.4em;
   margin: 2em;
 }
 
@@ -107,6 +108,7 @@ em {
 
 /*Navbar*/
 nav {
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -116,17 +118,20 @@ nav {
   width: 100%;
   background-color: #262832;
   height: 3em;
-  overflow: hidden;
   z-index: 999;
+  box-sizing: border-box;
 }
 
 nav h1 {
   margin: 0;
+  letter-spacing: .2em;
   color: #f4904f;
 }
 
 nav li {
-  height: inherit;
+  height: 3em;
+  transition: all .5s;
+  width: 100%:
 }
 
 nav a{
@@ -292,7 +297,6 @@ section h1{
   margin: 0 auto;
   max-width: 200px;
   display:block;
-
 }
 
 /* Portfolio */
@@ -507,17 +511,22 @@ label{
   form{
     width: 85%;
   }
-}
+  nav{
+   overflow: visible;
+  }
 
-@media only screen and (max-width: 480px) {
-
+  nav li{
+    margin-right: 0;
+  }
   .nav-links{
     display: none;
+    flex-direction: column;
+
   }
   nav ul {
     padding: .5em;
     position: absolute;
-    top: 3em;
+    top: 2em;
     background-color: #262832;
     box-shadow: 2px 2px 2px rgba(0,0,0,.25);
     width: 100%;
@@ -532,6 +541,10 @@ label{
   #show{
     display: show;
   }
+}
+
+@media only screen and (max-width: 480px) {
+
 }
 
 @keyframes spin {

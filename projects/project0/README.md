@@ -8,9 +8,10 @@ This project is a rework of my original personal website. It simplifies my origi
 
 ## Technologies
 - HTML5
-- CSS3
+- CSS3, Animations, Flexbox
 - Javascript ES6
 - jQuery
+- ScrollRevealJS: https://scrollrevealjs.org/
 - NASA Astronomy Picture of the Day API
 - GoodReads Shelf API
 

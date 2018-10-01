@@ -1,0 +1,34 @@
+{
+  "species": [
+    {
+      "common_name": "Bullet Ant",
+      "scientific_name": "Paraponera Clavata ",
+      "pain_level": 4,
+      "pain_description": "Pure, intense, brilliant pain. Like fire-walking over flaming charcoal witha 3-inch rusty nail grinding into your heel."
+    },
+    {
+      "common_name": "Tarantula Hawk",
+      "scientific_name": "Pepsini",
+      "pain_level": 4,
+      "pain_description": "Blinding, fierce, shockingly electric. A running hair dryer has been dropped in your bubble bath."
+    },
+    {
+      "common_name": "Red Harvester Ant",
+      "scientific_name": "Pogonomyrmex Barbatus",
+      "pain_level": 3,
+      "pain_description": "Bold and unrelenting. Somebody is using a drill to excavate your ingrown toenail."
+    },
+    {
+      "common_name": "Metricus Paper Wasp",
+      "scientific_name": "Polistes Metricus",
+      "pain_level": 3,
+      "pain_description": "Caustic and burning. Distinctly bitter aftertaste. Like spilling a beaker of hydrochloric acid on a paper cut."
+    },
+    {
+      "common_name": "Honey Bee",
+      "scientific_name": "Apis Cerana",
+      "pain_level": 2,
+      "pain_description": "Like a matchhead that flips off and burns your skin."
+    }
+  ]
+}
