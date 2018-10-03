@@ -39,10 +39,12 @@ app.get('/', function(req, res) {
 
 // get all books
 app.get('/api/books', (req, res) =>{
-  db.Book.find((err, allBooks) =>{
-    if (err) throw err;
-    res.json(allBooks);
-  });
+  db.Book.find()
+          .populate('author')
+          .exec((err, books) => {
+            if (err) throw err;
+            res.json(books);
+          });
 });
 
 
@@ -65,14 +67,32 @@ app.post('/api/books', function(req, res) {
     if (err) throw err;
     db.Author.findOne({name: req.body.author}, (err, foundAuthor) =>{
       if(err) throw err;
-      newBook.author = foundAuthor;
-      newBook.save((err, savedBook) =>{
-        if(err) throw err;
-        console.log(`Created ${savedBook}`);
-        res.json(newBook);
-      });
+      if(foundAuthor == null){
+        console.log('Author not found')
+        db.Author.create({name: req.body.author}, (err, newAuthor)=>{
+          if(err) throw err;
+          newAuthor.save((err, savedAuthor) =>{
+            if(err) throw err;
+            console.log(`saved ${savedAuthor}`)
+          });
+          newBook.author = newAuthor;
+          newBook.save((err, savedBook) =>{
+            if(err) throw err;
+            console.log(`Created ${savedBook}`);
+            res.json(newBook);
+          });
+        });
+
+      } else{
+        console.log(`Author is ${foundAuthor}`);
+        newBook.author = foundAuthor;
+        newBook.save((err, savedBook) =>{
+          if(err) throw err;
+          console.log(`Created ${savedBook}`);
+          res.json(newBook);
+        });
+      }
     });
-    console.log('Author not found');
   });
 });
 
