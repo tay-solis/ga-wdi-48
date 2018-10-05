@@ -40,7 +40,7 @@ app.get('/api/todos/:id', (req,res) => {
   db.Todo.findOne({_id: todoId}, (err, foundTodo)=>{
     if (err) return console.log(`Error at get one: ${err}`);
     res.json(foundTodo);
-  })
+  });
 });
 
 //Create new item

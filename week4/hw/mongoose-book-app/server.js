@@ -37,14 +37,41 @@ app.get('/', function(req, res) {
   });
 });
 
+////////AUTHOR ROUTES////////
+app.get('/api/authors', (req, res) => {
+  db.Author.find()
+    .populate('book')
+    .exec((err, authors) => {
+      if (err) throw err;
+      res.json(authors);
+    });
+});
+
+
+// get one book
+app.get('/api/authors/:id', function(req, res) {
+  // find one book by its id
+  console.log('authors show', req.params);
+  let authorId = req.params.id;
+  db.Author.findOne({
+      _id: authorId
+    })
+    .populate('book')
+    .exec((err, foundAuthor) => {
+      if (err) throw err;
+      res.json(foundAuthor);
+    });
+});
+////////BOOK ROUTES////////
+
 // get all books
-app.get('/api/books', (req, res) =>{
+app.get('/api/books', (req, res) => {
   db.Book.find()
-          .populate('author')
-          .exec((err, books) => {
-            if (err) throw err;
-            res.json(books);
-          });
+    .populate('author')
+    .exec((err, books) => {
+      if (err) throw err;
+      res.json(books);
+    });
 });
 
 
@@ -53,41 +80,51 @@ app.get('/api/books/:id', function(req, res) {
   // find one book by its id
   console.log('books show', req.params);
   let bookId = req.params.id;
-  db.Book.findOne({ _id: bookId})
-          .populate('author')
-          .exec((err, foundBook) => {
-            if (err) throw err;
-            res.json(foundBook);
-          });
+  db.Book.findOne({
+      _id: bookId
+    })
+    .populate('author')
+    .exec((err, foundBook) => {
+      if (err) throw err;
+      res.json(foundBook);
+    });
 });
 
 // create new book
 app.post('/api/books', function(req, res) {
-  db.Book.create({title: req.body.title}, (err, newBook) =>{
+  db.Book.create({
+    title: req.body.title
+  }, (err, newBook) => {
     if (err) throw err;
-    db.Author.findOne({name: req.body.author}, (err, foundAuthor) =>{
-      if(err) throw err;
-      if(foundAuthor == null){
+    //Looks to see if the book added's author already exists
+    db.Author.findOne({name: req.body.author}, (err, foundAuthor) => {
+      if (err) throw err;
+      //If it does not, it creates a new author and assigns it to the new book
+      if (foundAuthor == null) {
         console.log('Author not found')
-        db.Author.create({name: req.body.author}, (err, newAuthor)=>{
-          if(err) throw err;
-          newAuthor.save((err, savedAuthor) =>{
-            if(err) throw err;
+        db.Author.create({
+          name: req.body.author
+        }, (err, newAuthor) => {
+          if (err) throw err;
+          newAuthor.save((err, savedAuthor) => {
+            if (err) throw err;
             console.log(`saved ${savedAuthor}`)
           });
           newBook.author = newAuthor;
-          newBook.save((err, savedBook) =>{
-            if(err) throw err;
+          newAuthor.books.push(newBook);
+          newBook.save((err, savedBook) => {
+            if (err) throw err;
             console.log(`Created ${savedBook}`);
             res.json(newBook);
           });
         });
-
-      } else{
+        //If the author does exist, it references that author
+      } else {
         console.log(`Author is ${foundAuthor}`);
         newBook.author = foundAuthor;
-        newBook.save((err, savedBook) =>{
-          if(err) throw err;
+        foundAuthor.books.push(newBook);
+        newBook.save((err, savedBook) => {
+          if (err) throw err;
           console.log(`Created ${savedBook}`);
           res.json(newBook);
         });
@@ -126,6 +163,42 @@ app.delete('/api/books/:id', function(req, res) {
     res.json(deletedBook);
   });
 });
+
+////////CHARACTER ROUTES////////
+
+// app.get('/api/books/:bookId/characters', (req,res) =>{
+//
+// });
+
+// Create a character associated with a book
+app.post('/api/books/:book_id/characters', function(req, res) {
+  // Get book id from url params (`req.params`)
+  var bookId = req.params.book_id;
+  db.Book.findById(bookId)
+    .populate('author')
+    .exec(function(err, foundBook) {
+      if (err) throw err;
+      if (foundBook === null) return console.log(`Invalid Id ${bookId}, Book Not Found`);
+      // push req.body into characters array
+      foundBook.characters.push(res.body);
+      foundBook.save((err, savedBook) => {
+        if (err) throw err;
+        res.json(foundBook);
+      });
+    });
+});
+
+// app.get('/api/books/:bookId/characters/:id', (req,res) =>{
+//
+// });
+//
+// app.put('/api/books/:bookId/characters/:id', (req,res) =>{
+//
+// });
+//
+// app.delete('/api/books/:bookId/characters:id', (req,res) =>{
+//
+// });
 
 app.listen(process.env.PORT || 3000, function() {
   console.log('Book app listening at http://localhost:3000/');

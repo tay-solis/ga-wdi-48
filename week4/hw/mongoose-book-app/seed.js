@@ -90,41 +90,63 @@ var authors_list = [
   ];
 
 // remove all records that match {} -- which means remove ALL records
-db.Author.deleteMany({}, function(err, authors) {
-     console.log('removed all authors');
-     db.Author.create(authors_list, function(err, authors){
-       if (err) {
-         console.log(err);
-         return;
-       }
-       console.log('recreated all authors');
-       console.log("created", authors.length, "authors");
+db.Author.deleteMany({}, (err, authors) =>{
+  if(err) throw err;
+  for(let i = 0; i < authors_list.length; i++){
+    db.Author.create({
+      name: authors_length[i].name,
+      alive: authors_length[i].alive
+    }, (err, newAuthor) =>{
+      
+    });
+  }
+  console.log('Deleted authors');
+  db.Book.deleteMany({}, (err, authors) =>{
+    if(err) throw err;
+  });
+});
 
-
-       db.Book.deleteMany({}, function(err, books){
-         console.log('removed all books');
-         books_list.forEach(function (bookData) {
-           var book = new db.Book({
-             title: bookData.title,
-             image: bookData.image,
-             releaseDate: bookData.releaseDate
-           });
-           db.Author.findOne({name: bookData.author}, function (err, foundAuthor) {
-             console.log('found author ' + foundAuthor.name + ' for book ' + book.title);
-             if (err) {
-               console.log(err);
-               return;
-             }
-             book.author = foundAuthor;
-             book.save(function(err, savedBook){
-               if (err) {
-                 console.log(err);
-               }
-               console.log(savedBook);
-             });
-           });
-         });
-       });
-
-     });
-   });
+// db.Author.deleteMany({}, function(err, authors) {
+//      console.log('removed all authors');
+//      db.Author.create(authors_list, function(err, authors){
+//        if (err) {
+//          console.log(err);
+//          return;
+//        }
+//        console.log('recreated all authors');
+//        console.log("created", authors.length, "authors");
+//
+//
+//        db.Book.deleteMany({}, function(err, books){
+//          console.log('removed all books');
+//          books_list.forEach(function (bookData) {
+//            var book = new db.Book({
+//              title: bookData.title,
+//              image: bookData.image,
+//              releaseDate: bookData.releaseDate
+//            });
+//            db.Author.findOne({name: bookData.author}, function (err, foundAuthor) {
+//              console.log('found author ' + foundAuthor.name + ' for book ' + book.title);
+//              if (err) {
+//                console.log(err);
+//                return;
+//              }
+//
+//              book.author = foundAuthor;
+//
+//              foundAuthor.books.push(book);
+//              console.log('Found author = ' + foundAuthor);
+//              console.log('After book.author');
+//              book.save(function(err, savedBook){
+//                if (err) {
+//                  console.log(err);
+//                }
+//                console.log(savedBook);
+//                process.exit();
+//              });
+//            });
+//          });
+//        });
+//
+//      });
+//    });

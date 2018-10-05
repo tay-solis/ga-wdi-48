@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Character = require('./character');
 let Schema = mongoose.Schema;
 
 const BookSchema = new Schema({
@@ -7,6 +8,8 @@ const BookSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Author'
   },
+  characters:[Character.schema],
+  mainCharacter: Character.schema,
   image: String,
   releaseDate: String
 });
