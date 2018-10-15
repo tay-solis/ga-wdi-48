@@ -1,11 +1,49 @@
+/*
+Node modules:
+Browserify (enables require in browser)
+https://github.com/browserify/browserify
+
+*/
+/* The Spell Check API uses the open source Unirest library to provide suggestions*/
+
+let spellcheckURl ='https://montanaflynn-spellcheck.p.mashape.com/check/';
+const checkSpelling = (word) =>{
+  unirest.get("https://montanaflynn-spellcheck.p.mashape.com/check/?text=This+sentnce+has+some+probblems.")
+.header("X-Mashape-Key", "Aa9jwJUvjqmsh9rnzpg6otb05XWvp1e65qCjsnCZBKbYjnTKe0")
+.header("Accept", "application/json")
+.end(function (result) {
+  console.log(result);
+});
+}
 
 /*
-The Spellcheck API helps our users correct the spelling errors in their search criteria to ease the user experience of our search.
+The Bing Spellcheck API helps our users correct the spelling errors in their search criteria to ease the user experience of our search.
 https://docs.microsoft.com/en-us/azure/cognitive-services/bing-spell-check/
 https://docs.microsoft.com/en-us/rest/api/cognitiveservices/bing-spell-check-api-v7-reference
 */
-const bingSpellCheckKey ='40247b0e60fd4964813ba26437ecb6c0';
-const bingSpellCheckUrl = 'https://api.cognitive.microsoft.com/bing/v7.0/spellcheck';
+// const bingSpellCheckKey ='40247b0e60fd4964813ba26437ecb6c0';
+// const bingAppName = 'Search_Check';
+// const bingSpellCheckUrl = `https://api.cognitive.microsoft.com/bing/v7.0/spellcheck?mode=spell&mkt=en-us&spellCheck=true&verbose=true&timezoneOffset=0&${bingSpellCheckKey}`;
+//
+//
+// const spellCheck = (term) =>{
+//   term = term.trim();
+//   $.ajax({
+//     method: 'GET',
+//     url: `${bingSpellCheckUrl}&q=${term}`,
+//     headers: {
+//       "Ocp-Apim-Subscription-Key": bingSpellCheckKey
+//     },
+//     success: (response) =>{
+//       console.log(response);
+//     },
+//     error: (err) =>{
+//       throw err;
+//     }
+//   })
+// }
+
+
 
 /*
 The MediaWiki API is extensive, but if all we need to get from the page is the basic info, al we will need is the summary endpoint.
@@ -30,7 +68,8 @@ const getWiki = (title) =>{
       $('#searchField').val("");
     },
     error: (err) =>{
-      checkSpelling('#searchField');
+      $('#searchLabel').html(`Couldn't find anything. Did you mean: ?`);
+      spellCheck('#searchField');
     }
   });
 }
