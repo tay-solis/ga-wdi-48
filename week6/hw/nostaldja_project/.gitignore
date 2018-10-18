@@ -1,0 +1,4 @@
+.env
+nostaldja/migrations/__pycache__
+nostaldja/__pycache__
+nostaldja_project/__pycache__
