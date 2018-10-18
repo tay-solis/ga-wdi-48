@@ -1,0 +1,18 @@
+{% extends 'nostaldja/base.html' %}
+
+{% block content%}
+<h1>{{decade.name}}</h1>
+
+<ul>
+  {% for fad in decade.fads.all %}
+    <li>
+      <h3>{{ fad.name }}</h3>
+      <h2>{{ fad.decade }}</h2>
+      <img src="{{ fad.image_url }}" />
+      <p>
+        {{ fad.description }}
+      </p>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
