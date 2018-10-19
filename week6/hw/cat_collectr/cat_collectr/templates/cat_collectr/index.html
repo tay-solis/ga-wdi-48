@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CatCollectr</title>
+  </head>
+  <body>
+    <h1>CatCollectr</h1>
+    <ul>
+      {% for cat in cats%}
+      <div class="cat">
+        <h2>Name: {{ cat.name }}</h2>
+        <p>Age: {{ cat.age }}</p>
+      </div>
+      {% endfor %}
+    </ul>
+    <footer>&copy; Tay J Solis @ General Assembly</footer>
+  </body>
+</html>
