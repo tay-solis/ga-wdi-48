@@ -1,0 +1,28 @@
+{% extends 'contacts/base.html' %}
+
+{% block content %}
+
+{% if contact %}
+
+<h2>{{contact.first_name}} {{contact.last_name}}</h2>
+<p>
+  Added on: {{contact.date_added}}
+</p>
+<p>
+  Cell: {{contact.cell_phone}}<br />
+  Home: {{contact.home_phone}}<br />
+  Work: {{contact.work_phone}}
+</p>
+<p>
+  {{contact.address}}<br />
+  {{contact.city}}, {{contact.state}} {{contact.zipcode}}<br />
+  {{contact.country}}
+</p>
+
+{% else %}
+<p>
+  No contact available
+</p>
+{% endif%}
+
+{% endblock %}
