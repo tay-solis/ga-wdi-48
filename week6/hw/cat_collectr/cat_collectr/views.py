@@ -1,22 +1,25 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from .models import Cat
+from .forms import CatForm
 
+# Create your views here.
+def cats(request):
+    cats = Cat.objects.all()
+    return render(request, 'cats/cats.html', {'cats': cats})
 
+@login_required
+def my_cats(request):
+    cats = Cat.objects.filter(cat_parent_id = request.user.id)
+    return render(request, 'cats/cats.html', {'cats':cats})
 
-class Cat:
-	def __init__(self, name, breed, description, age):
-		self.name = name
-		self.breed = breed
-		self.description = description
-		self.age = age
-
-cats = [
-	Cat('Lolo', 'tabby', 'foul little demon', 3),
-	Cat('Sachi', 'tortoise shell', 'diluted tortoise shell', 0),
-    Cat('Raven', 'black tripod', '3 legged cat', 4)
-]
-
-def index(request):
-	return render(request, 'cat_collectr/index.html', {'cats': cats})
+@login_required
+def add_cat(request):
+    if request.method == 'POST':
+        form = CatForm(request.POST)
+        if form.is_valid():
+            cat = form.save()
+            return render(request, 'cats/add_cat.html', {'message': 'Added'})
+    else:
+        form = CatForm()
+        return render(request, 'cats/add_cat.html', {'form': form})

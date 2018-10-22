@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if error %}
+  <p style="background-color: salmon; padding: 10px;">{{ error }}</p>
+{% endif %}
+
+<h1>Register</h1>
+<form action="{% url 'register' %}" method="POST">{% csrf_token %}
+  <div>
+    <label for="first_name">First Name: </label>
+    <input type="text" placeholder="First Name" name="first_name" required maxlength="25" minlength="1"/>
+    <label for="last_name">Last Name: </label>
+    <input type="text" placeholder="Last Name" name="last_name" required maxlength="25" minlength="1"/>
+  </div>
+  <div>
+    <label for="email">Email: </label>
+    <input type="email" placeholder="Email" name="email" required maxlength="25" minlength="5"/>
+    <label for="username">Username: </label>
+    <input type="username" placeholder="Username" name="username" required maxlength="25" minlength="1"/>
+    <label for="password">Password: </label>
+    <input type="password" placeholder="password" name="password" required maxlength="25" minlength="5"/>
+    <label for="password2">Check Password </label>
+    <input type="password" placeholder="password2" name="password2" required maxlength="25" minlength="5"/>
+  </div>
+  </div>
+  <input type="submit" value="Register">
+</form>
+{% endblock %}

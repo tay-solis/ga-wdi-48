@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>What's Up Pussy Cat?</h1>
+{% if cats %}
+<ul>
+  {% for cat in cats %}
+    <li>
+      <h3>{{cat.name}}</h3>
+    </li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

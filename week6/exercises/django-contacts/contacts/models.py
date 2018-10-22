@@ -1,8 +1,14 @@
 from django.db import models
+
+# Python Datetime
 from datetime import datetime
+
+# Associate User to Contacts
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Contact(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'contacts')
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     cell_phone = models.CharField(max_length=25)

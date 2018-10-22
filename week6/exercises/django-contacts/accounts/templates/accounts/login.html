@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if error %}
+  <p style="background-color: salmon; padding: 10px;">{{ error }}</p>
+{% endif %}
+
+<h1>Login</h1>
+<form action="{% url 'login' %}" method="POST">{% csrf_token %}
+  <div>
+    <label for="username"></label>
+    <input type="text" placeholder="username" name="username" required maxlength="25" minlength="2"/>
+  </div>
+  <div>
+    <label for="password"></label>
+    <input type="password" placeholder="password" name="password" required maxlength="25" minlength="2"/>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

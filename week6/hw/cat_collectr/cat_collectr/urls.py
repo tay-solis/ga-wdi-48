@@ -1,10 +1,8 @@
-# CatCollectr/CatCollectr/urls.py
 from django.urls import path
-from django.contrib import admin
-from cat_collectr import views
+from . import views
 
 urlpatterns = [
-	path('admin/', admin.site.urls),
-	# add the line below to your urlpatterns array
-	path('', views.index, name='index')
+    path('', views.cats, name='cats'),
+    path('my_cats', views.my_cats, name='my_cats'),
+    path('add_cat', views.add_cat, name='add_cat')
 ]
