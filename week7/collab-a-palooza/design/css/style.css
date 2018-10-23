@@ -26,6 +26,7 @@ body {
   background-color: #EAECEE;
   font-family: 'ST Heinti Light', sans-serif;
   font-size: 14px;
+  line-height: 1.25em;
   color: #808B96;
 }
 
@@ -39,6 +40,7 @@ main{
 
 img{
   max-width: 100%;
+  height: auto;
   border-radius: 2px;
 }
 
@@ -106,7 +108,7 @@ nav ul {
 
 .logo h2{
   position: relative;
-  top: -.3em;
+  top: .5em;
   font-family: 'ST Heinti Light', sans-serif;
   font-style: 2em;
   font-weight: normal;
@@ -174,7 +176,7 @@ article{
 }
 
 article img{
-  width: 450px;
+  width: 50%;
 }
 
 article h1{
@@ -188,6 +190,7 @@ article p{
 
 .content{
   margin-left: 3em;
+  width: 50%;
 }
 
 /* Mobile */
@@ -220,6 +223,7 @@ article p{
   }
 
   article img{
+    width: 100%;
   }
 
   .content{

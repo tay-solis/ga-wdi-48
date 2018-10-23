@@ -12,6 +12,7 @@ const isLetters = (str) => {
 }
 
 $('.mailing-list').on('submit', (e) => {
+  e.preventDefault();
   let firstName = $('#mce-FNAME').val().trim();
   let firstIsLetters = isLetters(firstName);
   let lastName = $('#mce-LNAME').val().trim();
@@ -20,7 +21,7 @@ $('.mailing-list').on('submit', (e) => {
     $('#mce-FNAME').removeClass('invalid');
     $('#mce-LNAME').removeClass('invalid');
   } else{
-    e.preventDefault();
+
     if (!firstIsLetters) $('#mce-FNAME').addClass('invalid');
     if (!lastIsLetters) $('#mce-LNAME').addClass('invalid');
   }
