@@ -73,7 +73,7 @@ $('.subscribe-form').on('keyup click', ()=>{
     $('#mce-LNAME').removeClass('invalid');
   }
 
-  if(tocCheck && $('#mce-FNAME').val() !== '' && $('#mce-LNAME').val() !== ''){
+  if(tocCheck && lastIsLetters && firstIsLetters){
     $('#mc-embedded-subscribe').prop("disabled", false);
   } else{
     $('#mc-embedded-subscribe').prop("disabled", true);

@@ -5,7 +5,6 @@ Grey: #5F6870
 Black: #17202A
 */
 /* Fonts */
-
 @font-face {
   font-family: 'Abel Regular';
   src: url('/design/fonts/Abel-Regular.ttf');
@@ -13,8 +12,9 @@ Black: #17202A
 
 /* Global */
 #{
-  box-sizing: border-box;
+ box-sizing: border-box;
 }
+
 body {
   width: 100%;
   margin: 0;
@@ -25,47 +25,42 @@ body {
   color: #5F6870;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   align-content: center;
   margin-top: 130px;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
   border-radius: 2px;
 }
 
-div{
+div {
   border-radius: 2px;
 }
 
 /* Typography */
-a{
+a {
   color: #EAECEE;
   text-decoration: none;
 }
 
-a:focus{
+a:focus {
   color: #17202A;
 }
+
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-h1, h2, h3{
+h1, h2, h3 {
   font-weight: normal;
   font-family: 'Abel Regular', sans-serif;
 }
-
-article h1{
-  font-size: 2em;
-  margin: 10px;
-}
-
 
 /* Nav Bar */
 nav {
@@ -94,7 +89,7 @@ nav li {
   margin: 2em 1em 0 1em;
 }
 
-nav a{
+nav a {
   font-size: 1.25em;
 }
 
@@ -115,12 +110,11 @@ nav a{
   background-color: #EAECEE;
 }
 
-.logo{
+.logo {
   max-width: 68px;
 }
 
-
-.subscribe-button{
+.subscribe-button {
   font-family: 'Verdana', sans-serif;
   background-color: #EAECEE;
   color: #5F6870;
@@ -131,8 +125,7 @@ nav a{
 }
 
 /* Form */
-
-input{
+input {
   border: 1px solid #EAECEE;
   background-color: #EAECEE;
   color: #5F6870;
@@ -143,21 +136,21 @@ input{
   margin: .5em;
 }
 
-input:disabled{
+input:disabled {
   opacity: 0.6;
 }
 
-input:focus{
+input:focus {
   border: 2px solid #92bff4;
 }
 
-input[type="submit"]{
+input[type="submit"] {
   margin: 0 auto;
   font-size: 1.2em;
-  padding:  2px 6px;
+  padding: 2px 6px;
 }
 
-.subscribe-wrapper{
+.subscribe-wrapper {
   display: none;
   max-width: 500px;
   padding: 12px;
@@ -167,10 +160,9 @@ input[type="submit"]{
   justify-self: center;
   background-color: #5F6870;
   color: #EAECEE;
-
-  -webkit-box-shadow: 1px 1px 2px 0px rgba(23,32,42,0.48);
--moz-box-shadow: 1px 1px 2px 0px rgba(23,32,42,0.48);
-box-shadow: 1px 1px 2px 0px rgba(23,32,42,0.48);
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(23, 32, 42, 0.48);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(23, 32, 42, 0.48);
+  box-shadow: 1px 1px 2px 0px rgba(23, 32, 42, 0.48);
 }
 
 .subscribe-form {
@@ -183,23 +175,23 @@ box-shadow: 1px 1px 2px 0px rgba(23,32,42,0.48);
   margin: 12px;
 }
 
-.subscribe-form a{
+.subscribe-form a {
   color: #92bff4;
 }
-.names{
-  display:flex;
+
+.names {
+  display: flex;
   flex-direction: row;
 }
 
-.toc{
-  display:flex;
+.toc {
+  display: flex;
   flex-direction: row;
   justify-content: center;
-
   align-items: center;
 }
 
-.toc p{
+.toc p {
   padding-left: 1em;
 }
 
@@ -207,7 +199,7 @@ box-shadow: 1px 1px 2px 0px rgba(23,32,42,0.48);
   border: 2px solid rgb(251, 24, 24);
 }
 
-.check{
+.check {
   background-color: #EAECEE;
   width: 1.2em;
   height: 1.2em;
@@ -225,7 +217,7 @@ box-shadow: 1px 1px 2px 0px rgba(23,32,42,0.48);
 }
 
 /* Blog */
-article{
+article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -237,82 +229,84 @@ article{
   border-bottom: 1px solid #5F6870;
 }
 
-article img{
+article img {
   width: 50%;
 }
 
-article h1{
+article h1 {
   text-align: left;
   margin: 0;
+  font-size: 2em;
+  margin: 10px;
 }
 
-article p{
+article p {
   margin-bottom: 20px;
 }
 
-.content{
+.content {
   margin-left: 3em;
   width: 50%;
 }
 
 /* Mobile */
 @media only screen and (max-width: 720px) {
-  nav>div{
+  nav>div {
     width: 33%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-
   }
-  nav ul{
+
+  nav ul {
     align-items: center;
+    flex-direction: column;
   }
 
-  nav li{
-
-  }
-
-  .dropdown {
-    display: none;
-    padding-bottom: 1.5em;
-  }
-  .hamburger{
+  .hamburger {
     display: block;
   }
-  article{
-    flex-direction: column;
-    justify-content: center;
-    width: 93%;
-    padding: 0;
-    border: 0;
+
+  .posts{
+    margin-top: 20px;
   }
 
-  article h1{
+  article {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding: 0;
+    border: 0;
+    margin-bottom: 40px;
+  }
+
+  article h1 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
   }
 
-  article img{
+  article img {
     width: 100%;
   }
 
-  .content{
-    width:  90%;
+  .content {
+    width: 90%;
     border-bottom: 1px solid #5F6870;
     margin: 0 auto;
   }
-  .dropdown{
+
+  .dropdown {
     position: fixed;
     top: 113px;
     width: 100%;
     background-color: #5F6870;
-  }
-  nav ul{
-    flex-direction: column;
+    display: none;
+    padding-bottom: 1.5em;
   }
 
-  .subscribe-wrapper{
+  .subscribe-wrapper {
     width: 80%;
   }
 }
