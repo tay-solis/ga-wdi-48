@@ -4,83 +4,103 @@
 <head>
   <meta charset="utf-8">
   <title></title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link rel="stylesheet" href="design/css/style.css" type="text/css" />
 </head>
 
 <body>
-  <nav>
-    <div class="hamburger">
-      <div class="hamLine"></div>
-      <div class="hamLine"></div>
-      <div class="hamLine"></div>
+  <nav role="navigation">
+    <div>
+      <div class="hamburger">
+        <div class="hamLine"></div>
+        <div class="hamLine"></div>
+        <div class="hamLine"></div>
+      </div>
+    </div>
+
+    <div>
+      <img class="logo" src="design/images/Logo.png" />
     </div>
     <div class="dropdown">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Furniture</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Video</a></li>
+        <li><a href="#"><i class="fas fa-search"></i></a></li>
       </ul>
     </div>
-    <div class="logo">
-      <h1>ID</h1>
-      <h2>Blog</h2>
+    <div>
+      <button class="subscribe-button">Subscribe</button>
     </div>
 
-    <button class="subscribe-button">Subscribe</button>
   </nav>
-  <header>
-  </header>
-  <main>
+
+  <main role="main">
     <div class="subscribe-wrapper">
       <div class="close">
-        X
+        <i class="fas fa-times"></i>
       </div>
       <!-- Begin Mailchimp Signup Form -->
-      <form action="https://github.us19.list-manage.com/subscribe/post?u=052cf302d21b8bcf111536e05&amp;id=74afb2cb17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form">
-        <h2>Subscribe to our mailing list</h2>
+      <form role="subscribe" action="https://github.us19.list-manage.com/subscribe/post?u=052cf302d21b8bcf111536e05&amp;id=74afb2cb17" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="subscribe-form">
+        <p>
+          Sign up now and start receiving our weekly emails with the latest interior design news and interviews with industry leaders.
+        </p>
+        <!-- <div class="names"> -->
+          <div>
+            <label for="mce-FNAME">First Name: </label>
+            <input type="text" name="FNAME" id="mce-FNAME" placeholder="First Name">
+          </div>
+          <div>
+            <label for="mceLNAME">Last Name: </label>
+            <input type="text" name="LNAME" id="mce-LNAME" placeholder="Last Name">
+          </div>
+        <!-- </div> -->
         <div>
           <label for="email">Your Email: </label>
-          <input type="email" name="EMAIL" required id="mce-EMAIL" placeholder="Your Email">
+          <input type="email" name="EMAIL" required id="mce-EMAIL" placeholder="Required">
         </div>
-        <div>
-          <label for="mce-FNAME">First Name: </label>
-          <input type="text" name="FNAME" id="mce-FNAME" placeholder="First Name">
+        <div class="toc">
+          <div class="check">
+          </div>
+          <p>I agree to the <a href="#">Terms</a> and <a href="#">Conditions</a>.</p>
         </div>
-        <div>
-          <label for="mceLNAME">Last Name: </label>
-          <input type="text" name="LNAME" id="mce-LNAME" placeholder="Last Name">
-        </div>
+        <p>
+          <strong>We hate spam as much as you do!</strong>
 
-        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </p>
+        <input type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe" class="button" disabled>
       </form>
 
       <!--End mc_embed_signup-->
     </div>
     <section class="posts">
-      <article>
-        <img src="design/images/blog1.jpg" />
+      <article role="article">
+        <img alt="interior design photo" src="design/images/blog1.jpg" />
         <div class="content">
           <h1>Title 1</h1>
           <p>
-            Lorem ipsum dolor amet try-hard offal nulla normcore taxidermy laborum forage pour-over subway tile franzen actually fixie.
+            Lorem ipsum dolor amet try-hard offal nulla normcore taxidermy laborum forage pour-over subway tile franzen actually fixie. Scenester waistcoat ennui, 3 wolf moon church-key blue bottle hoodie williamsburg. Prism migas photo booth quinoa, keffiyeh ramps wayfarers pok pok gochujang +1 activated charcoal messenger bag bespoke four loko. Hot chicken YOLO helvetica affogato waistcoat photo booth plaid tofu meditation slow-carb vaporware. Forage raclette locavore pug.
           </p>
         </div>
 
       </article>
-      <article>
-        <img src="design/images/blog2.jpg" />
+      <article role="article">
+        <img alt="interior design photo" src="design/images/blog2.jpg" />
         <div class="content">
           <h1>Title 2</h1>
           <p>
-            Lorem ipsum dolor amet gluten-free velit iceland, aliqua meggings et hoodie brooklyn cred commodo 3 wolf moon sartorial everyday carry.
+            Lorem ipsum dolor amet gluten-free velit iceland, aliqua meggings et hoodie brooklyn cred commodo 3 wolf moon sartorial everyday carry. Hot chicken YOLO helvetica affogato waistcoat photo booth plaid tofu meditation slow-carb vaporware. Forage raclette locavore pug. Godard man braid green juice, chambray ramps copper mug enamel pin slow-carb master cleanse retro blog.
           </p>
         </div>
       </article>
-      <article>
-        <img src="design/images/blog3.jpg" />
+      <article role="article">
+        <img alt="interior design photo" src="design/images/blog3.jpg" />
         <div class="content">
           <h1>Title 3</h1>
           <p>
-            Lorem ipsum pabst selfies small batch fam hammock man braid pok pok nulla brunch hexagon chicharrones freegan vinyl. 
+            Lorem ipsum pabst selfies small batch fam hammock man braid pok pok nulla brunch hexagon chicharrones freegan vinyl. Taxidermy food truck cold-pressed plaid echo park craft beer. 8-bit locavore pop-up, blue bottle tote bag occupy air plant pinterest knausgaard.
           </p>
         </div>
 
