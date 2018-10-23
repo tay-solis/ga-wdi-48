@@ -32,6 +32,11 @@ main {
   margin-top: 130px;
 }
 
+footer{
+  padding: 12px;
+  text-align: center;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -46,6 +51,11 @@ div {
 a {
   color: #EAECEE;
   text-decoration: none;
+  transition: all .5s;
+}
+
+a:hover{
+  color: #92bff4;
 }
 
 a:focus {
@@ -76,6 +86,7 @@ nav {
   height: 113px;
   background-color: #5F6870;
   color: #EAECEE;
+  z-index: 999;
 }
 
 nav ul {
@@ -142,6 +153,12 @@ input:disabled {
 
 input:focus {
   border: 2px solid #92bff4;
+}
+
+input:invalid {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 input[type="submit"] {
@@ -267,7 +284,7 @@ article p {
     display: block;
   }
 
-  .posts{
+  .posts {
     margin-top: 20px;
   }
 
