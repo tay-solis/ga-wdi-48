@@ -1,0 +1,1 @@
+web: gunicorn cat_collectr_django.wsgi
