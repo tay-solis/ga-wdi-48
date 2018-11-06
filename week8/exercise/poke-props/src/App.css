@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+main{
+  padding: 2em;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f1f0f2;
+  color: #4f4b53;
+
+}
+
+section{
+  padding-bottom: 20px;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #b0a6a5;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px
+}
+
+h1{
+  text-align: left;
+  font-size: 3em;
+}
+
+h2{
+  font-size: 2em;
+}
+
+h3{
+  font-size: 1.75em;
+}
+
+h4{
+  font-size: 1.5em;
+}
+
+.type h2{
+  text-transform: uppercase;
+}
+
+ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.starterGen{
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: space-around;
+}
+
+.pokemon{
+  width: 250px;
+  height: 300px;
+  padding: 1em;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(126, 129, 128, 0.25);
+  box-shadow: 1px 1px 1px 1px rgba(126, 129, 128, 0.25);
+  border-radius: 6px;
+}
+
+.pokeTitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.grass .pokemon{
+  background-color: #9ad46c;
+}
+
+.fire .pokemon{
+  background-color: #ee9975;
+}
+
+.water .pokemon{
+  background-color: #a8deee;
+}
