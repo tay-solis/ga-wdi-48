@@ -29,10 +29,10 @@ class App extends Component {
       </header>
       <main>
           <Switch>
-            <Route path="/about" component={ About } />
-            <Route path="/" component={ StockDash }/>
+            <Route path="/about" component={ About } />        
             <Route path="/stocks/:symbol" component={ Stock }/>
             <Route path="/stocks" component={ StockDash }/>
+            <Route path="/" component={ StockDash }/>
           </Switch>
       </main>
       </div>

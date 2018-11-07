@@ -15,14 +15,14 @@ class Stock extends Component{
     }
     
     componentDidMount(){
-        let symbol = this.props.stock.symbol
-        let name = this.props.stock.companyName
+        let symbol = this.props.symbol;
+        console.log(symbol);
         axios.get(`${IEX_URL}/stock/${symbol}/quote`)
         .then((res)=>{
             console.log(res.data)
             this.setState({
                 symbol,
-                name,
+                name: res.data.companyName,
                 getSuccessful: true,
                 latestPrice: res.data.latestPrice,
                 changePercent: res.data.changePercent

@@ -56,7 +56,7 @@ class StockDash extends Component{
             console.log(res.data)
             let stocks = [];
         for (let i = 0; i < res.data.length; i++){
-            stocks.push(<Stock key={i} stock={res.data[i]}/>)
+            stocks.push(<Stock key={res.data[i].symbol} symbol={res.data[i].symbol}/>)
         }
             this.setState({
                 stocks
