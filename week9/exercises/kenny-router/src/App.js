@@ -3,11 +3,11 @@ import './App.css';
 import About from './components/About'
 import StockDash from './components/StockDash'
 import Stock from './components/Stock'
+import Nav from './components/Nav'
 
 
 import {
   Route,
-  Link,
   Switch
 } from 'react-router-dom'
 
@@ -17,13 +17,7 @@ class App extends Component {
       <div className="App">
       <header>
         <h1>Tech Stock</h1>
-        <nav>
-          {/* Create our nav bar links using the Link element from react router */}
-          <ul>
-            <li><Link to="/stocks">Home</Link></li>
-            <li><Link to="/about">About</Link></li>    
-          </ul>
-        </nav>
+        <Nav />
            {/* Create the routes. This will not appear on the page. */}
         
       </header>

@@ -15,7 +15,8 @@ class Stock extends Component{
     }
     
     componentDidMount(){
-        let symbol = this.props.symbol;
+       
+        let symbol = this.props.symbol ? this.props.symbol : this.props.match.params.symbol;
         console.log(symbol);
         axios.get(`${IEX_URL}/stock/${symbol}/quote`)
         .then((res)=>{

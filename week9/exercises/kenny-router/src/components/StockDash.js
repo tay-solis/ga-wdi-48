@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import Stock from './Stock'
 import axios from 'axios'
 import { GA_URL } from "../constants.js"
+import { Link } from 'react-router-dom'
 
 class StockDash extends Component{
     constructor(props){
         super(props)
         this.state={
             stocks: [],
-            currentIndex: 0
+            currentIndex: 0,
+            links: []
         }
 
         this.handleKeyUp = this.handleKeyUp.bind(this)
@@ -55,11 +57,14 @@ class StockDash extends Component{
         .then((res)=>{
             console.log(res.data)
             let stocks = [];
+            let links = [];
         for (let i = 0; i < res.data.length; i++){
-            stocks.push(<Stock key={res.data[i].symbol} symbol={res.data[i].symbol}/>)
+            stocks.push(<Stock key={i} symbol={res.data[i].symbol}/>)
+            links.push(<li><Link key={i} to={`stocks/${res.data[i].symbol}`}>{res.data[i].symbol}</Link></li>)
         }
             this.setState({
-                stocks
+                stocks,
+                links
             });
         })
         .catch((err)=>{
@@ -72,8 +77,15 @@ class StockDash extends Component{
         return(
             
             <div className="stockDash">
+                <ul>
+                    {this.state.links}
+               </ul>
                 <h2>Today's Stocks</h2>
                {this.state.stocks[this.state.currentIndex]}
+               
+                
+
+
             </div>
         );
     }
